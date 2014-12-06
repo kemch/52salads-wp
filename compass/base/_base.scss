@@ -1,0 +1,32 @@
+$black: black;
+$white: white;
+
+$unit: 15px;
+
+$color-background: $black;
+$color-text: $white;
+
+@mixin adelle {
+  font-family: "adelle",serif;
+}
+@mixin quatro-slab {
+	font-family: "quatro-slab", serif;
+}
+
+body {
+	@include quatro-slab;
+	background-color: $color-background;
+	color: $color-text;
+}
+
+.container {
+	margin: 0 auto;
+}
+header {
+	text-align: center;
+}
+
+h1 {
+	font-weight: 800;
+	font-size: 4em;
+}

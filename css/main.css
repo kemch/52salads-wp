@@ -266,4 +266,27 @@ th {
   padding: 0;
 }
 
+/* line 16, ../compass/base/_base.scss */
+body {
+  font-family: "quatro-slab", serif;
+  background-color: black;
+  color: white;
+}
+
+/* line 22, ../compass/base/_base.scss */
+.container {
+  margin: 0 auto;
+}
+
+/* line 25, ../compass/base/_base.scss */
+header {
+  text-align: center;
+}
+
+/* line 29, ../compass/base/_base.scss */
+h1 {
+  font-weight: 800;
+  font-size: 4em;
+}
+
 /*# sourceMappingURL=main.css.map */
