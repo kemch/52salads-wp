@@ -1,32 +1,493 @@
-$black: black;
-$white: white;
+@import "compass";
+@import "breakpoint";
 
-$unit: 15px;
+// Regular	"quatro-slab"	400	normal
+// Italic	"quatro-slab"	400	italic
+// Medium	"quatro-slab"	500	normal
+// Medium Italic	"quatro-slab"	500	italic
+// Semibold	"quatro-slab"	600	normal
+// Semibold Italic	"quatro-slab"	600	italic
+// Bold	"quatro-slab"	700	normal
+// Bold Italic	"quatro-slab"	700	italic
+// Ultra Black	"quatro-slab"	900	normal
+// Ultra Black Italic	"quatro-slab"	900	italic
 
-$color-background: $black;
-$color-text: $white;
+$black: #000000;
+$white: #ffffff;
 
-@mixin adelle {
-  font-family: "adelle",serif;
-}
+$dark-green: darken(#34450E,15);
+$medium-green: lighten($dark-green,10);
+$green: lighten($medium-green,26);
+$light-green: lighten($green,10);
+$yellowish: lighten(yellow,40);
+
+$smallest: 20em;
+$small: 30em;
+$medium: 48em;
+$large: 60em;
+
+
+// =================================
+// =================================
+// == Mixins
+// =================================
+// =================================
+
 @mixin quatro-slab {
-	font-family: "quatro-slab", serif;
+	font-family: "quatro-slab", georgia, serif;
+}
+
+@mixin clear { &:before,
+	&:after { display: table; content: ""; line-height: 0; }
+	&:after { clear: both; }
+}
+
+// =================================
+// =================================
+// == Tag
+// =================================
+// =================================
+
+* {
+	@include box-sizing(border-box);
 }
 
 body {
 	@include quatro-slab;
-	background-color: $color-background;
-	color: $color-text;
-}
-
-.container {
-	margin: 0 auto;
-}
-header {
-	text-align: center;
+	font-size: 16px;
+	line-height: 1.5;
 }
 
 h1 {
-	font-weight: 800;
-	font-size: 4em;
+	text-align: center;
+	font-size: 5em;
+	line-height: 1;
+	font-weight: 900;
+	margin-bottom: -10px;
+	.fa-stack {
+		font-size: 70%;
+		top: -11px;
+		margin-bottom: -10px;
+	}
+}
+
+.date {
+	@include inline-block;
+	float: right;
+	font-size: 50%;
+	position: relative;
+	top: 25px;
+}
+
+.site-heading {
+	font-size: 2em;
+	margin-bottom: 0;
+	color: $green;
+}
+
+h2 {
+	font-size: 3em;
+	font-weight: 700;
+	margin: 0;
+	line-height: 1;
+	@include breakpoint(0em $large) {
+		font-size: 2em;
+	}
+	.entry & {
+		color: $medium-green;
+		// border-bottom: 1px solid $medium-green;
+		padding:0;
+		line-height: 1;
+		font-size: 2em;
+		font-weight: 900;
+		margin: 0.67em 0;
+	}
+}
+
+h3 {
+	font-size: 0.875em;
+	font-weight: 400;
+	margin: 0;
+	@include breakpoint(0em $large) {
+		font-size: 0.75em;
+	}
+	.entry & {
+		font-size: 2em;
+	}
+}
+
+.not-yet {
+	h2 {
+		// color: darken($white,70);
+		color: $medium-green;
+	}
+	h3 {
+		// color: darken($white,70);
+		color: $medium-green;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.entry {
+	ul {
+		list-style: disc;
+		padding-left: 40px;
+	}
+
+	ol {
+		list-style: decimal;
+		padding-left: 40px;
+	}
+
+}
+
+.intro {
+	text-align: center;
+	font-style: italic;
+	margin-bottom: 1.75em;
+	margin-top: 0;
+}
+
+.posts {
+	background-color: $dark-green;
+	@include clear;
+}
+
+.filters {
+	font-size: 0.70em;
+	ul {
+		@include clear;
+		text-align: center;
+		padding: 5px;
+	}
+	// li {
+	// 	float: left;
+	// 	width: 16%;
+	// 	padding: 2px 5px;
+	// 	background-color: #FFF;
+	// 	cursor: pointer;
+	// 	&:hover {
+	// 		background-color: #DDD;
+	// 	}
+	// 	.tag {
+	// 	}
+	// 	.active {
+	// 		text-decoration: underline;
+	// 	}
+	// }
+	li {
+		display: inline;
+		padding: 2px 5px;
+		cursor: pointer;
+		.tag {
+			display: inline;
+			color: $green;
+		}
+
+		&:hover .tag {
+			color: $black;
+		}
+		.tag.active {
+			text-decoration: underline;
+		}
+	}
+}
+
+.container {
+	max-width: 35em;
+	padding: 20px;
+	// margin: 0 auto;
+	margin-left: 320px;
+}
+
+.container.post {
+	padding-top: 40px;
+}
+
+.hide {
+	display: none;
+}
+
+.salad {
+	float: left;
+	width: 20%;
+	border-right: 1px solid $medium-green;
+	border-bottom: 1px solid $medium-green;
+
+	@include transition(width 0.2s ease);
+
+	img {
+		display: block;
+	}
+	@include breakpoint(0em $large) {
+		width: 25%;
+	}
+	@include breakpoint(0em $medium) {
+		width: 33%;
+	}
+	@include breakpoint(0em $small) {
+		width: 50%;
+	}
+	@include breakpoint(0em $small) {
+		width: 50%;
+	}
+	@include breakpoint(0em $smallest) {
+		width: 100%;
+	}
+}
+
+.salad-wrap {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: darken(#34450E,15);
+	color: $white;
+
+	&:hover {
+		.salad-bg {
+			opacity: 0.5;
+			// @include translateY(50%);
+			@include background-size(125% auto);
+		}
+		.salad-summary {
+			@include translateY(0%);
+			@include opacity(1);
+		}
+		.salad-info {
+			// @include translateY(-100%);
+		}
+	}
+}
+
+// .fa-cutlery {
+// 	font-size: 80%;
+// 	width: 100px;
+// 	height: 100px;
+// 	border-radius: 50%;
+// 	background-color: #000;
+// 	color: #fff;
+// 	padding: 20px;
+// }
+
+.fa-cutlery {
+	color: #fff;
+}
+
+.salad-layout-block {
+	img {
+		position: relative;
+		z-index: 10;
+	}
+}
+
+.salad-thm {
+	z-index: 12;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.salad-bg {
+	opacity: 1;
+	transition-property: opacity, transform, background-size;
+	transition-duration: 0.1s, 0.2s;
+	transition-timing-function: ease, ease;
+	@include translateY(0);
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 20;
+	@include background-size(100% auto);
+	background: {
+		repeat: no-repeat;
+		position: center center;
+	}
+}
+
+.salad-summary {
+	position: absolute;
+	z-index: 30;
+	bottom: 0;
+	color: $white;
+	padding: 20px 20px 0 20px;
+	// @include translateY(100%);
+	// @include transition(transform 0.4s ease);
+	@include opacity(0);
+	@include transition(opacity 0.4s ease);
+
+	.fa {
+		color: $white;
+	}
+
+	p {
+		font-size: 0.875em;
+		margin-bottom: 0;
+		margin-top: 0;
+		line-height: 1.3;
+	}
+
+	.summary {
+		margin-bottom: 0.75em;
+	}
+	.summary span {
+		background-color: rgba($green,0.5);
+	}
+
+	.link {
+		font-style: italic;
+		font-weight: 400;
+		margin-bottom: 0.75em;
+		a {
+			color: $white;
+			text-decoration: none;
+		}
+	}
+	@include breakpoint(0em $large) {
+		p {
+			font-size: 0.75em;
+		}
+	}
+}
+
+.open {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+
+	// .salad-summary {
+	// 	@include background-size(auto auto);
+	// 	background-position: top left;
+	// }
+}
+
+#recipe {
+	// position: fixed;
+	// top: 0;
+	// left: auto;
+	// right: auto;
+	// bottom: 0;
+	// z-index: 100;
+	// width: 100%;
+	// overflow-y:scroll;
+ //  overflow-x:hidden;
+}
+
+.recipe-wrap {
+	position: fixed;
+	top: 0;
+	left: auto;
+	right: auto;
+	bottom: 0;
+	z-index: 100;
+	width: 100%;
+	overflow-y:scroll;
+  overflow-x:hidden;
+	background-color: rgba($dark-green,0.75);
+	// position: relative;
+	color: $yellowish;
+	font-size: 1.5em;
+	font-weight: 100;
+	padding: 15px 50px 15px 200px;
+	img {
+		display: none;
+	}
+	h2 {
+		position: fixed;
+		top: 25px;
+		left: 25px;
+	}
+	h4 {
+		margin: 0.5em 0;
+		font-weight: 400;
+		color: $light-green;
+	}
+	.close {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		color: $white;
+	}
+}
+
+.post-side {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 100%;
+	padding-top: 40px;
+	background-color: lighten($green,10);
+	background-color: lighten(yellow,40);
+
+	h2 {
+		font-size: 11em;
+		padding: 20px 0 0 40px;
+		color: rgba($green,0.5);
+	}
+}
+
+.after-post {
+	border-top: 1px solid $green;
+	padding-top: 10px;
+	margin-top: 10px;
+	a {
+		color: $black;
+	}
+	ul {
+		@include clear;
+		text-align: center;
+	}
+
+	li {
+		@include inline-block;
+		margin: 5px 10px;
+	}
+}
+
+.salad-info {
+	padding: 20px 20px;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: 12;
+	// background-color:rgba($dark-green,0.5);
+	width: 100%;
+	height: 100%;
+	// @include translateY(0%);
+	// @include transition(transform 0.4s ease);
+	@include background-image(linear-gradient(135deg, rgba($dark-green, 0.8) 0%, rgba($dark-green, 0) 50%));
+}
+
+.salad-info-only {
+	padding: 20px;
+}
+
+.step {
+	line-height: 1.8;
+	border-radius: 50%;
+	background-color: $black;
+	color: $white;
+	@include inline-block;
+	float: left;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width:30px;
+	height:30px;
+	display: table-cell;
+	vertical-align: center;
+	text-align: center;
 }
