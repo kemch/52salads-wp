@@ -12,7 +12,7 @@
 				<ul>
 					<li><a class="js-nav-salads" href="/salads">Salads</a></li>
 					<li>/</li>
-					<li><a class="js-nav-vinegrettes" href="#">Vinegrettes</a></li>
+					<li><a class="js-nav-vinaigrette" href="#">Vinaigrette</a></li>
 					<li>/</li>
 					<li><a class="js-nav-season" href="#">In Season</a></li>
 					<li>/</li>
