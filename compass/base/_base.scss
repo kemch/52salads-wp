@@ -17,15 +17,28 @@ $white: #ffffff;
 
 $dark-green: darken(#34450E,15);
 $medium-green: lighten($dark-green,10);
-$green: lighten($medium-green,26);
+$green: #00A020;
 $light-green: lighten($green,10);
 $yellowish: lighten(yellow,40);
+
+$grey: #DCDCDC;
 
 $smallest: 20em;
 $small: 30em;
 $medium: 48em;
 $large: 60em;
 
+
+// =================================
+// =================================
+// == Placeholders
+// =================================
+// =================================
+
+%type-display {
+	font-size: 1.5em;
+	color: $green;
+}
 
 // =================================
 // =================================
@@ -60,15 +73,21 @@ body {
 
 h1 {
 	text-align: center;
-	font-size: 5em;
+	font-size: 7em;
 	line-height: 1;
 	font-weight: 900;
 	margin-bottom: -10px;
+	margin-top: 0.25em;
 	.fa-stack {
 		font-size: 70%;
 		top: -11px;
 		margin-bottom: -10px;
 	}
+}
+
+a {
+	color: $green;
+	text-decoration: none;
 }
 
 .date {
@@ -77,6 +96,22 @@ h1 {
 	font-size: 50%;
 	position: relative;
 	top: 25px;
+}
+
+header {
+	text-align: center;
+	padding: 1em 20px 10px 40px;
+	nav {
+		li {
+			@extend %type-display;
+			@include inline-block;
+			color: $grey;
+			margin: 0 10px;
+		}
+	}
+	p {
+		@extend %type-display;
+	}
 }
 
 .site-heading {

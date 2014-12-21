@@ -8,10 +8,27 @@
 	</head>
 	<body>
 		<header>
+			<nav>
+				<ul>
+					<li><a class="js-nav-salads" href="/salads">Salads</a></li>
+					<li>/</li>
+					<li><a class="js-nav-vinegrettes" href="#">Vinegrettes</a></li>
+					<li>/</li>
+					<li><a class="js-nav-season" href="#">In Season</a></li>
+					<li>/</li>
+					<li><a class="js-nav-hacks" href="#">Salad Hacks</a></li>
+				</ul>
+			</nav>
 			<h1><span class="fa-stack">
 			  <i class="fa fa-circle fa-stack-2x"></i>
 			  <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
 			</span> 52 Salads</h1>
+			<p>One salad a week for a year. Don&rsquo;t miss a salad:
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-envelope"></i></a>
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-pinterest"></i></a>
+			</p>
 		</header>
 		<ul class="posts">
 			<? query_posts('showposts=52&order=ASC'); ?>
@@ -29,7 +46,7 @@
 						<?php endif; ?>
 						<div class="salad-info">
 							<h2>#<? the_field('salad_number'); ?></h2>
-							<h3>(date)</h3>
+							<h3><? the_date('m/d/Y'); ?></h3>
 						</div>
 						<div class="salad-summary">
 							<? the_field('ingredient_list'); ?>
@@ -38,7 +55,7 @@
 				</li>
 			<? endwhile; ?>
 			<? $i = $num_posts; ?>
-			<? while ( $i < 54 ) : $i++ ?>
+			<? while ( $i < 52 ) : $i++ ?>
 				<li class="salad">
 					<div class="salad-wrap">
 						<div class="salad-layout-block">
