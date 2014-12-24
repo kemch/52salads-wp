@@ -7,7 +7,7 @@ css_dir = "../css"
 sass_dir = "."
 images_dir = "../img"
 
-sourcemap = true
+sourcemap = false
 
 output_style = :expanded
-line_comments = true
+line_comments = false

@@ -1,25 +1,70 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-		<? get_header(); ?>
-	</head>
+<? get_header(); ?>
+
+<body>
+	<header>
+		<? get_template_part( 'nav' ); ?>
+
+	</header>
+	<section class="section-hero">
+		<div class="hero-content">
+			<h1>One salad per week for a year.</h1>
+		</div>
+	</section>
+	<section class="section-salads">
+		<ul class="salad-list">
+			<? query_posts('showposts=52&order=ASC'); ?>
+			<? $num_posts = $wp_query->post_count; ?>
+			<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<li>
+					<a class="salad-link-wrap" href="<?php the_permalink();?>">
+						<span class="salad-list-number">
+							<span><span><span class="circle">
+								<span class="number">#<? the_field('salad_number'); ?></span>
+							</span></span></span>
+						</span>
+						<span class="salad-list-content">
+							<span class="salad-list-date"><?php the_date('m/d/Y');?></span>
+							<span class="salad-list-ingredients"><? the_field('ingredient_list'); ?></span>
+						</span>
+						<? $image = get_field('image'); if( !empty($image) ): ?>
+						<?php endif; ?>
+						<span class="salad-list-thumbnail" style="background-image:url(<?php echo $image['url']; ?>);">
+						<!-- <span class="salad-list-thumbnail" style="background-image:url('http://52salads.kurtemch.com/img/salad-01.jpg');"> -->
+						</span>
+						<img src="http://52salads.kurtemch.com/img/blank.png" alt="blank">
+						<!-- <img src="http://placehold.it/500" alt=""> -->
+					</a>
+				</li>
+			<? endwhile; ?>
+			<? $i = $num_posts; ?>
+			<? while ( $i < 52 ) : $i++ ?>
+				<li>
+					<div class="salad-link-wrap">
+						<span class="salad-list-number">
+							<span><span><span class="circle">
+								<span class="number">#<? echo $i; ?> </span>
+							</span></span></span>
+						</span>
+						<span class="salad-list-content">
+							<span class="salad-list-date"><i class="fa fa-clock-o"></i></span>
+						</span>
+						<span class="salad-list-thumbnail" style="background-image:url('http://52salads.kurtemch.com/img/salad-0<? echo $i; ?>.jpg');"></span>
+						<img src="http://52salads.kurtemch.com/img/blank.png" alt="">
+					</div>
+				</li>
+			<? endwhile; ?>
+			<? else : ?>
+			<? endif; ?>
+		</ul>
+	</section>
+</body>
+
+
+<? /*
 	<body>
 		<header>
-			<nav>
-				<ul>
-					<li><a class="js-nav-salads" href="/salads">Salads</a></li>
-					<li>/</li>
-					<li><a class="js-nav-vinaigrette" href="#">Vinaigrette</a></li>
-					<li>/</li>
-					<li><a class="js-nav-season" href="#">In Season</a></li>
-					<li>/</li>
-					<li><a class="js-nav-hacks" href="#">Salad Hacks</a></li>
-				</ul>
-			</nav>
-			<h1><span class="fa-stack">
+			<? get_template_part( 'nav' ); ?>
+			<h1 class="site-title"><span class="fa-stack">
 			  <i class="fa fa-circle fa-stack-2x"></i>
 			  <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
 			</span> 52 Salads</h1>
@@ -30,46 +75,53 @@
 				<a href="#"><i class="fa fa-pinterest"></i></a>
 			</p>
 		</header>
-		<ul class="posts">
-			<? query_posts('showposts=52&order=ASC'); ?>
-			<? $num_posts = $wp_query->post_count; ?>
-			<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-				<li class="salad">
-					<div class="salad-wrap">
-						<div class="salad-layout-block">
-							<img src="http://52salads.kurtemch.com/img/blank.png" alt="blank">
+		<section class="section-hero">
+
+		</section>
+		<section class="section-salads">
+			<ul class="posts" style="display:none;">
+				<? query_posts('showposts=52&order=ASC'); ?>
+				<? $num_posts = $wp_query->post_count; ?>
+				<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+					<li class="salad">
+						<div class="salad-wrap">
+							<div class="salad-layout-block">
+								<img src="http://52salads.kurtemch.com/img/blank.png" alt="blank">
+							</div>
+							<? $image = get_field('image'); if( !empty($image) ): ?>
+							<div class="salad-thm">
+								<div class="salad-bg" style="background-image:url(<?php echo $image['url']; ?>);"></div>
+							</div>
+							<?php endif; ?>
+							<div class="salad-info">
+								<div class="salad-number">#<? the_field('salad_number'); ?></div>
+								<div class="salad-date"><? the_date('m/d/Y'); ?></div>
+							</div>
+							<div class="salad-summary">
+								<a href="<? the_permalink(); ?>">Link</a>
+								<? the_field('ingredient_list'); ?>
+							</div>
 						</div>
-						<? $image = get_field('image'); if( !empty($image) ): ?>
-						<div class="salad-thm">
-							<div class="salad-bg" style="background-image:url(<?php echo $image['url']; ?>);"></div>
+					</li>
+				<? endwhile; ?>
+				<? $i = $num_posts; ?>
+				<? while ( $i < 52 ) : $i++ ?>
+					<li class="salad">
+						<div class="salad-wrap">
+							<div class="salad-layout-block">
+								<img src="http://52salads.kurtemch.com/img/blank.png" alt="blank">
+							</div>
+							<div class="salad-info not-yet">
+								<h2>#<? echo $i; ?></h2>
+							</div>
 						</div>
-						<?php endif; ?>
-						<div class="salad-info">
-							<h2>#<? the_field('salad_number'); ?></h2>
-							<h3><? the_date('m/d/Y'); ?></h3>
-						</div>
-						<div class="salad-summary">
-							<? the_field('ingredient_list'); ?>
-						</div>
-					</div>
-				</li>
-			<? endwhile; ?>
-			<? $i = $num_posts; ?>
-			<? while ( $i < 52 ) : $i++ ?>
-				<li class="salad">
-					<div class="salad-wrap">
-						<div class="salad-layout-block">
-							<img src="http://52salads.kurtemch.com/img/blank.png" alt="blank">
-						</div>
-						<div class="salad-info not-yet">
-							<h2>#<? echo $i; ?></h2>
-						</div>
-					</div>
-				</li>
-			<? endwhile; ?>
-			<? else : ?>
-			<? endif; ?>
-		</ul>
+					</li>
+				<? endwhile; ?>
+				<? else : ?>
+				<? endif; ?>
+			</ul>
+		</section>
 		<? get_footer(); ?>
 	</body>
 </html>
+*/ ?>

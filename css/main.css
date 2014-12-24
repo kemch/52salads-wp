@@ -266,542 +266,272 @@ th {
   padding: 0;
 }
 
-/* line 38, ../compass/base/_base.scss */
-header nav li, header p {
-  font-size: 1.5em;
-  color: #00a020;
+/* line 35, ../compass/base/_base.scss */
+.salad-list-number, .salad-list-content, .salad-list-date, .salad-list-thumbnail {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
-/* line 64, ../compass/base/_base.scss */
+/* line 42, ../compass/base/_base.scss */
+.salad-list-ingredients {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* line 49, ../compass/base/_base.scss */
+header, .hero-content, .salad-list-date, .salad-list-ingredients {
+  padding: 25px;
+}
+
+/* line 66, ../compass/base/_base.scss */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 68, ../compass/base/_base.scss */
+/* line 70, ../compass/base/_base.scss */
 body {
-  font-family: "quatro-slab", georgia, serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-family: "adelle", georgia, serif;
+  font-size: 14px;
+  line-height: 1.428;
 }
 
-/* line 74, ../compass/base/_base.scss */
-h1 {
-  text-align: center;
-  font-size: 7em;
-  line-height: 1;
-  font-weight: 900;
-  margin-bottom: -10px;
-  margin-top: 0.25em;
-}
-/* line 81, ../compass/base/_base.scss */
-h1 .fa-stack {
-  font-size: 70%;
-  top: -11px;
-  margin-bottom: -10px;
-}
-
-/* line 88, ../compass/base/_base.scss */
-a {
-  color: #00a020;
-  text-decoration: none;
-}
-
-/* line 93, ../compass/base/_base.scss */
-.date {
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
-  float: right;
-  font-size: 50%;
-  position: relative;
-  top: 25px;
-}
-
-/* line 101, ../compass/base/_base.scss */
-header {
-  text-align: center;
-  padding: 1em 20px 10px 40px;
-}
-/* line 105, ../compass/base/_base.scss */
-header nav li {
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
-  color: gainsboro;
-  margin: 0 10px;
-}
-
-/* line 117, ../compass/base/_base.scss */
-.site-heading {
-  font-size: 2em;
-  margin-bottom: 0;
-  color: #00a020;
-}
-
-/* line 123, ../compass/base/_base.scss */
-h2 {
-  font-size: 3em;
-  font-weight: 700;
-  margin: 0;
-  line-height: 1;
-}
-@media (min-width: 0em) and (max-width: 60em) {
-  /* line 123, ../compass/base/_base.scss */
-  h2 {
-    font-size: 2em;
-  }
-}
-/* line 131, ../compass/base/_base.scss */
-.entry h2 {
-  color: #24300a;
+/* line 76, ../compass/base/_base.scss */
+ul, ol {
+  list-style: none;
   padding: 0;
-  line-height: 1;
-  font-size: 2em;
-  font-weight: 900;
-  margin: 0.67em 0;
 }
 
-/* line 142, ../compass/base/_base.scss */
-h3 {
-  font-size: 0.875em;
-  font-weight: 400;
-  margin: 0;
-}
-@media (min-width: 0em) and (max-width: 60em) {
-  /* line 142, ../compass/base/_base.scss */
-  h3 {
-    font-size: 0.75em;
-  }
-}
-/* line 149, ../compass/base/_base.scss */
-.entry h3 {
-  font-size: 2em;
-}
-
-/* line 155, ../compass/base/_base.scss */
-.not-yet h2 {
-  color: #24300a;
-}
-/* line 159, ../compass/base/_base.scss */
-.not-yet h3 {
-  color: #24300a;
-}
-
-/* line 165, ../compass/base/_base.scss */
+/* line 81, ../compass/base/_base.scss */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 170, ../compass/base/_base.scss */
-ul, ol {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+/* line 86, ../compass/base/_base.scss */
+h1 {
+  font-weight: 100;
+  font-size: 3em;
 }
 
-/* line 177, ../compass/base/_base.scss */
-.entry ul {
-  list-style: disc;
-  padding-left: 40px;
+/* line 91, ../compass/base/_base.scss */
+p {
+  margin-bottom: 7.714px;
 }
-/* line 182, ../compass/base/_base.scss */
-.entry ol {
-  list-style: decimal;
-  padding-left: 40px;
+
+/* line 101, ../compass/base/_base.scss */
+header {
+  background: #34450e;
+  width: 100%;
+}
+
+/* line 114, ../compass/base/_base.scss */
+.nav li {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin: 0 20px;
+}
+/* line 117, ../compass/base/_base.scss */
+.nav li a {
+  color: white;
+  font-weight: 100;
+  font-size: 1;
+  text-decoration: none;
+}
+
+/* line 132, ../compass/base/_base.scss */
+.section-hero {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  background-image: url("../img/hero-1.jpg");
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  -webkit-background-size: contain;
+  background-size: contain;
+  text-align: center;
+  color: white;
+}
+
+/* line 149, ../compass/base/_base.scss */
+.hero-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* line 2, ../compass/base/utilities/_mixins.scss */
+.hero-content:before, .hero-content:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+/* line 6, ../compass/base/utilities/_mixins.scss */
+.hero-content:after {
+  clear: both;
+}
+
+/* line 170, ../compass/base/_base.scss */
+.salad-list {
+  margin: 0;
+  padding: 0;
+}
+/* line 2, ../compass/base/utilities/_mixins.scss */
+.salad-list:before, .salad-list:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+/* line 6, ../compass/base/utilities/_mixins.scss */
+.salad-list:after {
+  clear: both;
+}
+/* line 174, ../compass/base/_base.scss */
+.salad-list li {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  border-left: 1px solid #34450e;
+  border-bottom: 1px solid #34450e;
+  width: 25%;
+  float: left;
+  background-color: black;
+}
+/* line 183, ../compass/base/_base.scss */
+.salad-list li img {
+  display: block;
 }
 
 /* line 189, ../compass/base/_base.scss */
-.intro {
-  text-align: center;
-  font-style: italic;
-  margin-bottom: 1.75em;
-  margin-top: 0;
-}
-
-/* line 196, ../compass/base/_base.scss */
-.posts {
-  background-color: #040501;
-}
-/* line 53, ../compass/base/_base.scss */
-.posts:before, .posts:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-/* line 55, ../compass/base/_base.scss */
-.posts:after {
-  clear: both;
-}
-
-/* line 201, ../compass/base/_base.scss */
-.filters {
-  font-size: 0.70em;
-}
-/* line 203, ../compass/base/_base.scss */
-.filters ul {
-  text-align: center;
-  padding: 5px;
-}
-/* line 53, ../compass/base/_base.scss */
-.filters ul:before, .filters ul:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-/* line 55, ../compass/base/_base.scss */
-.filters ul:after {
-  clear: both;
-}
-/* line 223, ../compass/base/_base.scss */
-.filters li {
-  display: inline;
-  padding: 2px 5px;
-  cursor: pointer;
-}
-/* line 227, ../compass/base/_base.scss */
-.filters li .tag {
-  display: inline;
-  color: #00a020;
-}
-/* line 232, ../compass/base/_base.scss */
-.filters li:hover .tag {
-  color: black;
-}
-/* line 235, ../compass/base/_base.scss */
-.filters li .tag.active {
-  text-decoration: underline;
-}
-
-/* line 241, ../compass/base/_base.scss */
-.container {
-  max-width: 35em;
-  padding: 20px;
-  margin-left: 320px;
-}
-
-/* line 248, ../compass/base/_base.scss */
-.container.post {
-  padding-top: 40px;
-}
-
-/* line 252, ../compass/base/_base.scss */
-.hide {
-  display: none;
-}
-
-/* line 256, ../compass/base/_base.scss */
-.salad {
-  float: left;
-  width: 20%;
-  border-right: 1px solid #24300a;
-  border-bottom: 1px solid #24300a;
-  -moz-transition: width 0.2s ease;
-  -o-transition: width 0.2s ease;
-  -webkit-transition: width 0.2s ease;
-  transition: width 0.2s ease;
-}
-/* line 264, ../compass/base/_base.scss */
-.salad img {
+.salad-link-wrap {
+  text-decoration: none;
   display: block;
+  color: inherit;
 }
-@media (min-width: 0em) and (max-width: 60em) {
-  /* line 256, ../compass/base/_base.scss */
-  .salad {
-    width: 25%;
-  }
-}
-@media (min-width: 0em) and (max-width: 48em) {
-  /* line 256, ../compass/base/_base.scss */
-  .salad {
-    width: 33%;
-  }
-}
-@media (min-width: 0em) and (max-width: 30em) {
-  /* line 256, ../compass/base/_base.scss */
-  .salad {
-    width: 50%;
-  }
-}
-@media (min-width: 0em) and (max-width: 30em) {
-  /* line 256, ../compass/base/_base.scss */
-  .salad {
-    width: 50%;
-  }
-}
-@media (min-width: 0em) and (max-width: 20em) {
-  /* line 256, ../compass/base/_base.scss */
-  .salad {
-    width: 100%;
-  }
-}
-
-/* line 284, ../compass/base/_base.scss */
-.salad-wrap {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: #040501;
-  color: white;
-}
-/* line 293, ../compass/base/_base.scss */
-.salad-wrap:hover .salad-bg {
-  opacity: 0.5;
+/* line 194, ../compass/base/_base.scss */
+.salad-link-wrap:hover .salad-list-thumbnail {
   -moz-background-size: 125% auto;
   -o-background-size: 125% auto;
   -webkit-background-size: 125% auto;
   background-size: 125% auto;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
 }
-/* line 298, ../compass/base/_base.scss */
-.salad-wrap:hover .salad-summary {
-  -moz-transform: translateY(0%);
-  -ms-transform: translateY(0%);
-  -webkit-transform: translateY(0%);
-  transform: translateY(0%);
+/* line 199, ../compass/base/_base.scss */
+.salad-link-wrap:hover .salad-list-number .number {
+  color: white;
+}
+/* line 202, ../compass/base/_base.scss */
+.salad-link-wrap:hover .salad-list-number .circle {
+  background-color: rgba(255, 255, 255, 0);
+}
+/* line 206, ../compass/base/_base.scss */
+.salad-link-wrap:hover .salad-list-content {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 318, ../compass/base/_base.scss */
-.fa-cutlery {
-  color: #fff;
-}
-
-/* line 323, ../compass/base/_base.scss */
-.salad-layout-block img {
-  position: relative;
+/* line 213, ../compass/base/_base.scss */
+.salad-list-number {
   z-index: 10;
 }
-
-/* line 329, ../compass/base/_base.scss */
-.salad-thm {
-  z-index: 12;
-  position: absolute;
+/* line 218, ../compass/base/_base.scss */
+.salad-list-number .number {
+  -moz-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  -webkit-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+  line-height: 2.425em;
+  color: black;
+  font-weight: 100;
+}
+/* line 224, ../compass/base/_base.scss */
+.salad-list-number .circle {
+  -moz-transition: background-color 0.2s ease;
+  -o-transition: background-color 0.2s ease;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  border-radius: 50%;
+  font-size: 2em;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-backface-visibility: hidden;
+  border: 3px solid #fff;
+  background-color: white;
+  vertical-align: middle;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/* line 237, ../compass/base/_base.scss */
+.salad-list-number > span {
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
+  text-align: center;
+  display: table;
+}
+/* line 242, ../compass/base/_base.scss */
+.salad-list-number > span > span {
+  display: table-cell;
+  vertical-align: middle;
 }
 
-/* line 338, ../compass/base/_base.scss */
-.salad-bg {
-  opacity: 1;
-  transition-property: opacity, transform, background-size;
+/* line 249, ../compass/base/_base.scss */
+.salad-list-content {
+  -moz-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  text-align: center;
+  bottom: 0;
+  z-index: 10;
+  color: white;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 260, ../compass/base/_base.scss */
+.salad-list-date {
+  text-align: center;
+  font-weight: 100;
+}
+
+/* line 267, ../compass/base/_base.scss */
+.salad-list-ingredients {
+  text-align: center;
+  font-weight: 100;
+}
+
+/* line 274, ../compass/base/_base.scss */
+.salad-list-thumbnail {
+  transition-property: opacity, background-size;
   transition-duration: 0.1s, 0.2s;
   transition-timing-function: ease, ease;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 20;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  z-index: 5;
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
   -webkit-background-size: 100% auto;
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center center;
-}
-
-/* line 355, ../compass/base/_base.scss */
-.salad-summary {
-  position: absolute;
-  z-index: 30;
-  bottom: 0;
-  color: white;
-  padding: 20px 20px 0 20px;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -moz-transition: opacity 0.4s ease;
-  -o-transition: opacity 0.4s ease;
-  -webkit-transition: opacity 0.4s ease;
-  transition: opacity 0.4s ease;
-}
-/* line 366, ../compass/base/_base.scss */
-.salad-summary .fa {
-  color: white;
-}
-/* line 370, ../compass/base/_base.scss */
-.salad-summary p {
-  font-size: 0.875em;
-  margin-bottom: 0;
-  margin-top: 0;
-  line-height: 1.3;
-}
-/* line 377, ../compass/base/_base.scss */
-.salad-summary .summary {
-  margin-bottom: 0.75em;
-}
-/* line 380, ../compass/base/_base.scss */
-.salad-summary .summary span {
-  background-color: rgba(0, 160, 32, 0.5);
-}
-/* line 384, ../compass/base/_base.scss */
-.salad-summary .link {
-  font-style: italic;
-  font-weight: 400;
-  margin-bottom: 0.75em;
-}
-/* line 388, ../compass/base/_base.scss */
-.salad-summary .link a {
-  color: white;
-  text-decoration: none;
-}
-@media (min-width: 0em) and (max-width: 60em) {
-  /* line 394, ../compass/base/_base.scss */
-  .salad-summary p {
-    font-size: 0.75em;
-  }
-}
-
-/* line 400, ../compass/base/_base.scss */
-.open {
-  position: absolute;
-  z-index: 100;
-  top: 0;
-}
-
-/* line 423, ../compass/base/_base.scss */
-.recipe-wrap {
-  position: fixed;
-  top: 0;
-  left: auto;
-  right: auto;
-  bottom: 0;
-  z-index: 100;
-  width: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  background-color: rgba(4, 5, 1, 0.75);
-  color: #ffffcc;
-  font-size: 1.5em;
-  font-weight: 100;
-  padding: 15px 50px 15px 200px;
-}
-/* line 439, ../compass/base/_base.scss */
-.recipe-wrap img {
-  display: none;
-}
-/* line 442, ../compass/base/_base.scss */
-.recipe-wrap h2 {
-  position: fixed;
-  top: 25px;
-  left: 25px;
-}
-/* line 447, ../compass/base/_base.scss */
-.recipe-wrap h4 {
-  margin: 0.5em 0;
-  font-weight: 400;
-  color: #00d32a;
-}
-/* line 452, ../compass/base/_base.scss */
-.recipe-wrap .close {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  color: white;
-}
-
-/* line 460, ../compass/base/_base.scss */
-.post-side {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 300px;
-  height: 100%;
-  padding-top: 40px;
-  background-color: #00d32a;
-  background-color: #ffffcc;
-}
-/* line 470, ../compass/base/_base.scss */
-.post-side h2 {
-  font-size: 11em;
-  padding: 20px 0 0 40px;
-  color: rgba(0, 160, 32, 0.5);
-}
-
-/* line 477, ../compass/base/_base.scss */
-.after-post {
-  border-top: 1px solid #00a020;
-  padding-top: 10px;
-  margin-top: 10px;
-}
-/* line 481, ../compass/base/_base.scss */
-.after-post a {
-  color: black;
-}
-/* line 484, ../compass/base/_base.scss */
-.after-post ul {
-  text-align: center;
-}
-/* line 53, ../compass/base/_base.scss */
-.after-post ul:before, .after-post ul:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-/* line 55, ../compass/base/_base.scss */
-.after-post ul:after {
-  clear: both;
-}
-/* line 489, ../compass/base/_base.scss */
-.after-post li {
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
-  margin: 5px 10px;
-}
-
-/* line 495, ../compass/base/_base.scss */
-.salad-info {
-  padding: 20px 20px;
-  top: 0;
-  left: 0;
-  position: absolute;
-  z-index: 12;
-  width: 100%;
-  height: 100%;
-  background-image: -moz-linear-gradient(315deg, rgba(4, 5, 1, 0.8) 0%, rgba(4, 5, 1, 0) 50%);
-  background-image: -webkit-linear-gradient(315deg, rgba(4, 5, 1, 0.8) 0%, rgba(4, 5, 1, 0) 50%);
-  background-image: linear-gradient(135deg, rgba(4, 5, 1, 0.8) 0%, rgba(4, 5, 1, 0) 50%);
-}
-
-/* line 509, ../compass/base/_base.scss */
-.salad-info-only {
-  padding: 20px;
-}
-
-/* line 513, ../compass/base/_base.scss */
-.step {
-  line-height: 1.8;
-  border-radius: 50%;
-  background-color: black;
-  color: white;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
-  float: left;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  width: 30px;
-  height: 30px;
-  display: table-cell;
-  vertical-align: center;
-  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */
