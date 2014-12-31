@@ -58,7 +58,7 @@
 						</span>
 						<span class="salad-list-content">
 							<span class="salad-list-date"><?php the_date('m/d/Y');?></span>
-							<span class="salad-list-ingredients"><? the_field('ingredient_list'); ?></span>
+							<span class="salad-list-ingredients"><? the_title(); ?></span>
 						</span>
 						<? $image = get_field('image'); if( !empty($image) ): ?>
 						<?php endif; ?>
