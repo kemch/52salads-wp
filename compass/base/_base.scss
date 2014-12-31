@@ -1,3 +1,8 @@
+.mockup {
+	opacity:0.8;width:100%;position:fixed;top:0;z-index:1000;text-align:center;
+	display: none;
+}
+
 @import "compass";
 @import "breakpoint";
 @import "utilities/mixins";
@@ -10,12 +15,34 @@
 
 $white: #FFF;
 $black: #000000;
-$dark-green: #34450E;
-$medium-green: lighten($dark-green,10);
-$green: #00A020;
+// $dark-green: #34450E;
+$green: #B8CE47;
+$medium-green: lighten($green,10);
+$dark-green: darken($green,30);
 $light-green: lighten($green,10);
 $yellowish: lighten(yellow,40);
 
+$light-beige: #F3E1A6;
+$light-blue: #CAE2D8;
+$light-red: #F1644A;
+$burnt-orange: #9D542A;
+$brown: darken(#784F37,20);
+
+$color-background: $brown;
+$color-text: $brown;
+$color-heading: $brown;
+$color-link: $light-red;
+$color-border: $light-red;
+
+$color-header-background: $brown;
+$color-header-heading: $white;
+
+$color-nav-link: $white;
+
+$color-hero-background: $white;
+$color-hero-heading: $brown;
+
+$border-width: 4px;
 
 $adelle: "adelle", georgia, serif;
 
@@ -71,11 +98,21 @@ body {
 	font-family: $adelle;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
+	// background-color: $color-background;
+	color: $color-text;
+}
+
+a {
+	color: $color-link;
 }
 
 ul, ol {
-	list-style: none;
-	padding: 0;
+	// list-style: none;
+	// padding: 0;
+}
+
+small {
+	font-size: 0.5em;
 }
 
 img {
@@ -84,12 +121,53 @@ img {
 }
 
 h1 {
-	font-weight: 100;
-	font-size: 3em;
+	font-weight: 300;
+	font-size: 4.75em;
+	margin: 0 0 0.5em 0;
+	line-height: 1;
+	small {
+		top: -10px;
+		position: relative;
+	}
+}
+
+h2 {
+	font-weight: 300;
+	letter-spacing: 3px;
+	margin: 0.5em 0;
+	line-height: 1;
+	font-size: 1.75em;
+	color: $burnt-orange;
+}
+
+h3 {
+	color: $color-heading;
+	font-size: 1.5em;
+	margin: 0 0 0.5em 0;
+	font-weight: 300;
+	line-height: 1;
 }
 
 p {
-	margin-bottom: ($base-font-size + $base-line-height) / 2;
+	margin-bottom: $base-font-size + $base-line-height;
+	font-weight: 400;
+}
+ul {
+	// list-style: disc;
+}
+
+li {
+	font-weight: 400;
+}
+
+// =================================
+// =================================
+// == LAYOUT
+// =================================
+// =================================
+
+.container {
+	@extend %spacing;
 }
 
 // =================================
@@ -100,8 +178,9 @@ p {
 
 header {
 	@extend %spacing;
-	background: $dark-green;
+	background-color: $color-header-background;
 	width: 100%;
+	// border-bottom: $border-width solid $brown;
 }
 
 // =================================
@@ -111,14 +190,28 @@ header {
 // =================================
 
 .nav {
+	list-style: none;
+	padding: 0;
+	text-align: center;
+	ul {
+	}
 	li {
 		@include inline-block;
 		margin: 0 20px;
 		a {
-			color: white;
-			font-weight: 100;
-			font-size: 1;
+			color: $color-nav-link;
+			font-weight: 400;
+			font-size: 1em;
 			text-decoration: none;
+		}
+		.hero-content & {
+			margin: 0 20px 0 0;
+			a {
+				font-weight: 100;
+				// color: $white;
+				color: $color-hero-heading;
+				font-size: 2em;
+			}
 		}
 	}
 }
@@ -130,33 +223,70 @@ header {
 // =================================
 
 .section-hero {
-	width: 100%;
-	height: 100%;
-	// min-height: 200px;
-	background: {
-		color: $black;
-		repeat: no-repeat;
-		attachment: fixed;
-		position: center top;
-		image: url('../img/hero-1.jpg');
-	}
-	@include background-size(contain);
 	text-align: center;
-	color: $white;
+	color: $color-hero-heading;
+	// padding-bottom: 20px;
+	position: relative;
+	// background: {
+	// 	color: $color-hero-background;
+	// 	repeat: no-repeat;
+	// 	attachment: fixed;
+	// 	position: center top;
+	// 	// image: url('../img/hero-1.jpg');
+	// }
 }
-
 
 .hero-content {
-	@extend %spacing;
+	text-align: center;
+	padding-top: 40px;
 	@include clear;
-	position: relative;
-	height: 100%;
 	width: 100%;
-	background-color: rgba($black,0.5);
+	min-height: 230px;
+	position: relative;
+	background-color: $color-hero-background;
 }
 
+.search-container {
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	display: none;
+}
 
+.search {
+	background-color: $green;
+	@include inline-block;
+	font-weight: 100;
+	padding: 15px 30px;
+	color: $white;
+	font-size: 1.25em;
+	.fa {
+		color: rgba($white,0.5);
+	}
+}
 
+.content-share {
+	max-width: 550px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.share-links {
+	padding: 0;
+	li {
+		@include inline-block;
+		margin: 10px;
+	}
+}
+
+footer {
+	background-color: $brown;
+	padding: 15px;
+	width: 100%;
+}
 // =================================
 // =================================
 // == HOME SALAD LIST
@@ -167,19 +297,26 @@ header {
 
 }
 
+.salad {
+	background-color: $black;
+}
+
+.pending {
+	background-color: $black;
+}
 .salad-list {
 	@include clear;
 	margin: 0;
 	padding: 0;
+	background-color: $color-background;
 	li {
 		position: relative;
 		list-style: none;
 		overflow: hidden;
-		border-left: 1px solid $dark-green;
-		border-bottom: 1px solid $dark-green;
-		width: 25%;
+		border-left: 4px solid $brown;
+		border-bottom: 4px solid $brown;
+		width: 20%;
 		float: left;
-		background-color: $black;
 		img {
 			display: block;
 		}
@@ -218,7 +355,8 @@ header {
 	.number {
 		@include transition(color 0.4s ease);
 		line-height: $circle-radius*0.97;
-		color: $black;
+		// color: $black;
+		color: $color-link;
 		font-weight: 100;
 	}
 	.circle {
@@ -287,617 +425,45 @@ header {
 }
 
 
-
-// @import "compass";
-// @import "breakpoint";
-
-// // Regular	"quatro-slab"	400	normal
-// // Italic	"quatro-slab"	400	italic
-// // Medium	"quatro-slab"	500	normal
-// // Medium Italic	"quatro-slab"	500	italic
-// // Semibold	"quatro-slab"	600	normal
-// // Semibold Italic	"quatro-slab"	600	italic
-// // Bold	"quatro-slab"	700	normal
-// // Bold Italic	"quatro-slab"	700	italic
-// // Ultra Black	"quatro-slab"	900	normal
-// // Ultra Black Italic	"quatro-slab"	900	italic
-
-// $black: #000000;
-// $white: #ffffff;
-
-// $dark-green: darken(#34450E,15);
-// $medium-green: lighten($dark-green,10);
-// $green: #00A020;
-// $light-green: lighten($green,10);
-// $yellowish: lighten(yellow,40);
-
-// // $grey: #DCDCDC;
-// $grey: #5D5858;
-
-// $smallest: 20em;
-// $small: 30em;
-// $medium: 48em;
-// $large: 60em;
-
-
-// $type-size-base: 14px;
-
-// $type-size-1: $type-size-base;
-// $type-size-2: 7px + $type-size-base;
-// $type-size-3: $type-size-1 + $type-size-2;
-// $type-size-4: $type-size-2 + $type-size-3;
-// $type-size-5: $type-size-3 + $type-size-4;
-// $type-size-6: $type-size-4 + $type-size-5;
-
-// %type-size-1 {
-// 	font-size: $type-size-1;
-// 	line-height: 20px;
-// }
-// %type-size-2 {
-// 	font-size: $type-size-2;
-// 	line-height: 31px;
-// }
-// %type-size-3 {
-// 	font-size: $type-size-3;
-// 	line-height: 53px;
-// }
-// %type-size-4 {
-// 	font-size: $type-size-4;
-// 	line-height: 73px;
-// }
-// %type-size-5 {
-// 	font-size: $type-size-5;
-// 	line-height: 126px;
-// }
-// %type-size-6 {
-// 	font-size: $type-size-6;
-// 	line-height: 199px;
-// }
-// // $type-size-2: $type-size-
-
-
-// // =================================
-// // =================================
-// // == Placeholders
-// // =================================
-// // =================================
-
-// %type-display {
-// 	font-size: 1.5em;
-// 	color: $green;
-// }
-
-// // =================================
-// // =================================
-// // == Mixins
-// // =================================
-// // =================================
-
-// @mixin quatro-slab {
-// 	font-family: "quatro-slab", georgia, serif;
-// }
-
-// @mixin adelle {
-// 	font-family: "adelle", georgia, serif;
-// }
-
-// @mixin clear { &:before,
-// 	&:after { display: table; content: ""; line-height: 0; }
-// 	&:after { clear: both; }
-// }
-
-// // =================================
-// // =================================
-// // == Tag
-// // =================================
-// // =================================
-
-// * {
-// 	@include box-sizing(border-box);
-// }
-
-// body {
-// 	@include adelle;
-// 	font-size: 16px;
-// 	line-height: 1.5;
-// }
-
-// h1 {
-// 	@extend %type-size-5;
-// 	color: $grey;
-// 	margin: 0.5em 0;
-// }
-
-// h2 {
-// 	@extend %type-size-4;
-// 	color: $grey;
-// 	margin: 0.5em 0;
-// }
-
-// h3 {
-// 	@extend %type-size-3;
-// 	font-weight: 300;
-// 	font-style: italic;
-// 	color: $grey;
-// 	margin: 0.5em 0;
-// }
-
-// aside {
-// 	@extend %type-size-2;
-// 	color: $grey;
-// 	margin: 0.5em 0;
-// 	font-style: italic;
-// 	color: rgba($grey, 0.4);
-// 	font-weight: 300;
-// }
-
-// p {
-// 	@extend %type-size-1;
-// 	font-weight: 300;
-// 	color: $grey;
-// 	// line-height: 1.5;
-// 	// margin: 0.5em 0;
-// }
-
-// .site-title {
-// 	text-align: center;
-// 	// font-size: 7em;
-// 	@extend %type-size-6;
-// 	line-height: 1;
-// 	font-weight: 900;
-// 	margin-bottom: -10px;
-// 	margin-top: 0.25em;
-// 	.fa-stack {
-// 		font-size: 70%;
-// 		top: -11px;
-// 		margin-bottom: -10px;
-// 	}
-// }
-
-// a {
-// 	color: $green;
-// 	text-decoration: none;
-// }
-
-// .date {
-// 	@include inline-block;
-// 	float: right;
-// 	font-size: 50%;
-// 	position: relative;
-// 	top: 25px;
-// }
-
-// header {
-// 	text-align: center;
-// 	padding: 1em 20px 10px 40px;
-// 	nav {
-// 		li {
-// 			@extend %type-display;
-// 			@include inline-block;
-// 			color: $grey;
-// 			margin: 0 10px;
-// 		}
-// 	}
-// 	p {
-// 		@extend %type-display;
-// 	}
-// }
-
-// .site-heading {
-// 	font-size: 2em;
-// 	margin-bottom: 0;
-// 	color: $green;
-// }
-
-// .salad-number {
-// 	font-size: 3em;
-// 	font-weight: 700;
-// 	margin: 0;
-// 	line-height: 1;
-// 	@include breakpoint(0em $large) {
-// 		font-size: 2em;
-// 	}
-// 	.entry & {
-// 		color: $medium-green;
-// 		// border-bottom: 1px solid $medium-green;
-// 		padding:0;
-// 		line-height: 1;
-// 		font-size: 2em;
-// 		font-weight: 900;
-// 		margin: 0.67em 0;
-// 	}
-// }
-
-// .salad-date {
-// 	font-size: 0.875em;
-// 	font-weight: 400;
-// 	margin: 0;
-// 	@include breakpoint(0em $large) {
-// 		font-size: 0.75em;
-// 	}
-// 	.entry & {
-// 		font-size: 2em;
-// 	}
-// }
-
-// .not-yet {
-// 	h2 {
-// 		// color: darken($white,70);
-// 		color: $medium-green;
-// 	}
-// 	h3 {
-// 		// color: darken($white,70);
-// 		color: $medium-green;
-// 	}
-// }
-
-// img {
-// 	max-width: 100%;
-// 	height: auto;
-// }
-
-// ul, ol {
-// 	margin: 0;
-// 	padding: 0;
-// 	list-style-type: none;
-// }
-
-// .entry {
-// 	ul {
-// 		list-style: disc;
-// 		padding-left: 40px;
-// 	}
-
-// 	ol {
-// 		list-style: decimal;
-// 		padding-left: 40px;
-// 	}
-
-// }
-
-// .intro {
-// 	text-align: center;
-// 	font-style: italic;
-// 	margin-bottom: 1.75em;
-// 	margin-top: 0;
-// }
-
-// .posts {
-// 	background-color: $dark-green;
-// 	@include clear;
-// }
-
-// .filters {
-// 	font-size: 0.70em;
-// 	ul {
-// 		@include clear;
-// 		text-align: center;
-// 		padding: 5px;
-// 	}
-// 	// li {
-// 	// 	float: left;
-// 	// 	width: 16%;
-// 	// 	padding: 2px 5px;
-// 	// 	background-color: #FFF;
-// 	// 	cursor: pointer;
-// 	// 	&:hover {
-// 	// 		background-color: #DDD;
-// 	// 	}
-// 	// 	.tag {
-// 	// 	}
-// 	// 	.active {
-// 	// 		text-decoration: underline;
-// 	// 	}
-// 	// }
-// 	li {
-// 		display: inline;
-// 		padding: 2px 5px;
-// 		cursor: pointer;
-// 		.tag {
-// 			display: inline;
-// 			color: $green;
-// 		}
-
-// 		&:hover .tag {
-// 			color: $black;
-// 		}
-// 		.tag.active {
-// 			text-decoration: underline;
-// 		}
-// 	}
-// }
-
-// .container {
-// 	max-width: 35em;
-// 	padding: 20px;
-// 	// margin: 0 auto;
-// 	margin-left: 320px;
-// }
-
-// .container.post {
-// 	padding-top: 40px;
-// }
-
-// .hide {
-// 	display: none;
-// }
-
-// .salad {
-// 	float: left;
-// 	width: 20%;
-// 	border-right: 1px solid $medium-green;
-// 	border-bottom: 1px solid $medium-green;
-
-// 	@include transition(width 0.2s ease);
-
-// 	img {
-// 		display: block;
-// 	}
-// 	@include breakpoint(0em $large) {
-// 		width: 25%;
-// 	}
-// 	@include breakpoint(0em $medium) {
-// 		width: 33%;
-// 	}
-// 	@include breakpoint(0em $small) {
-// 		width: 50%;
-// 	}
-// 	@include breakpoint(0em $small) {
-// 		width: 50%;
-// 	}
-// 	@include breakpoint(0em $smallest) {
-// 		width: 100%;
-// 	}
-// }
-
-// .salad-wrap {
-// 	position: relative;
-// 	width: 100%;
-// 	height: 100%;
-// 	overflow: hidden;
-// 	background-color: darken(#34450E,15);
-// 	color: $white;
-
-// 	&:hover {
-// 		.salad-bg {
-// 			opacity: 0.5;
-// 			// @include translateY(50%);
-// 			@include background-size(125% auto);
-// 		}
-// 		.salad-summary {
-// 			@include translateY(0%);
-// 			@include opacity(1);
-// 		}
-// 		.salad-info {
-// 			// @include translateY(-100%);
-// 		}
-// 	}
-// }
-
-// // .fa-cutlery {
-// // 	font-size: 80%;
-// // 	width: 100px;
-// // 	height: 100px;
-// // 	border-radius: 50%;
-// // 	background-color: #000;
-// // 	color: #fff;
-// // 	padding: 20px;
-// // }
-
-// .fa-cutlery {
-// 	color: #fff;
-// }
-
-// .salad-layout-block {
-// 	img {
-// 		position: relative;
-// 		z-index: 10;
-// 	}
-// }
-
-// .salad-thm {
-// 	z-index: 12;
-// 	position: absolute;
-// 	width: 100%;
-// 	height: 100%;
-// 	top: 0;
-// 	left: 0;
-// }
-
-// .salad-bg {
-// 	opacity: 1;
-// 	transition-property: opacity, transform, background-size;
-// 	transition-duration: 0.1s, 0.2s;
-// 	transition-timing-function: ease, ease;
-// 	@include translateY(0);
-// 	width: 100%;
-// 	height: 100%;
-// 	position: relative;
-// 	z-index: 20;
-// 	@include background-size(100% auto);
-// 	background: {
-// 		repeat: no-repeat;
-// 		position: center center;
-// 	}
-// }
-
-// .salad-summary {
-// 	position: absolute;
-// 	z-index: 30;
-// 	bottom: 0;
-// 	color: $white;
-// 	padding: 20px 20px 0 20px;
-// 	// @include translateY(100%);
-// 	// @include transition(transform 0.4s ease);
-// 	@include opacity(0);
-// 	@include transition(opacity 0.4s ease);
-
-// 	.fa {
-// 		color: $white;
-// 	}
-
-// 	p {
-// 		font-size: 0.875em;
-// 		margin-bottom: 0;
-// 		margin-top: 0;
-// 		line-height: 1.3;
-// 	}
-
-// 	.summary {
-// 		margin-bottom: 0.75em;
-// 	}
-// 	.summary span {
-// 		background-color: rgba($green,0.5);
-// 	}
-
-// 	.link {
-// 		font-style: italic;
-// 		font-weight: 400;
-// 		margin-bottom: 0.75em;
-// 		a {
-// 			color: $white;
-// 			text-decoration: none;
-// 		}
-// 	}
-// 	@include breakpoint(0em $large) {
-// 		p {
-// 			font-size: 0.75em;
-// 		}
-// 	}
-// }
-
-// .open {
-// 	position: absolute;
-// 	z-index: 100;
-// 	top: 0;
-
-// 	// .salad-summary {
-// 	// 	@include background-size(auto auto);
-// 	// 	background-position: top left;
-// 	// }
-// }
-
-// #recipe {
-// 	// position: fixed;
-// 	// top: 0;
-// 	// left: auto;
-// 	// right: auto;
-// 	// bottom: 0;
-// 	// z-index: 100;
-// 	// width: 100%;
-// 	// overflow-y:scroll;
-//  //  overflow-x:hidden;
-// }
-
-// .recipe-wrap {
-// 	position: fixed;
-// 	top: 0;
-// 	left: auto;
-// 	right: auto;
-// 	bottom: 0;
-// 	z-index: 100;
-// 	width: 100%;
-// 	overflow-y:scroll;
-//   overflow-x:hidden;
-// 	background-color: rgba($dark-green,0.75);
-// 	// position: relative;
-// 	color: $yellowish;
-// 	font-size: 1.5em;
-// 	font-weight: 100;
-// 	padding: 15px 50px 15px 200px;
-// 	img {
-// 		display: none;
-// 	}
-// 	h2 {
-// 		position: fixed;
-// 		top: 25px;
-// 		left: 25px;
-// 	}
-// 	h4 {
-// 		margin: 0.5em 0;
-// 		font-weight: 400;
-// 		color: $light-green;
-// 	}
-// 	.close {
-// 		position: fixed;
-// 		top: 20px;
-// 		right: 20px;
-// 		color: $white;
-// 	}
-// }
-
-// .post-side {
-// 	position: fixed;
-// 	top: 0;
-// 	left: 0;
-// 	width: 300px;
-// 	height: 100%;
-// 	padding-top: 40px;
-// 	background-color: lighten($green,10);
-// 	background-color: lighten(yellow,40);
-
-// 	h2 {
-// 		font-size: 11em;
-// 		padding: 20px 0 0 40px;
-// 		color: rgba($green,0.5);
-// 	}
-// }
-
-// .after-post {
-// 	border-top: 1px solid $green;
-// 	padding-top: 10px;
-// 	margin-top: 10px;
-// 	a {
-// 		color: $black;
-// 	}
-// 	ul {
-// 		@include clear;
-// 		text-align: center;
-// 	}
-
-// 	li {
-// 		@include inline-block;
-// 		margin: 5px 10px;
-// 	}
-// }
-
-// .salad-info {
-// 	padding: 20px 20px;
-// 	top: 0;
-// 	left: 0;
-// 	position: absolute;
-// 	z-index: 12;
-// 	// background-color:rgba($dark-green,0.5);
-// 	width: 100%;
-// 	height: 100%;
-// 	// @include translateY(0%);
-// 	// @include transition(transform 0.4s ease);
-// 	@include background-image(linear-gradient(135deg, rgba($dark-green, 0.8) 0%, rgba($dark-green, 0) 50%));
-// }
-
-// .salad-info-only {
-// 	padding: 20px;
-// }
-
-// .step {
-// 	line-height: 1.8;
-// 	border-radius: 50%;
-// 	background-color: $black;
-// 	color: $white;
-// 	@include inline-block;
-// 	float: left;
-// 	margin-top: 10px;
-// 	margin-right: 10px;
-// 	margin-bottom: 10px;
-// 	width:30px;
-// 	height:30px;
-// 	display: table-cell;
-// 	vertical-align: center;
-// 	text-align: center;
-// }
-
-
-// .salad-post {
-// 	max-width: 340px;
-// 	margin: 0 auto;
-// }
+// =================================
+// =================================
+// == POST CONTENT
+// =================================
+// =================================
+
+.section-content {
+	background: white;
+}
+
+.content-ingredients {
+	@include clear;
+	max-width: 750px;
+	margin: 0 auto;
+}
+
+.content-recipe {
+	max-width: 550px;
+	margin: 0 auto;
+	h2 {
+		text-align: center;
+	}
+}
+
+.salad-photo {
+	width: 50%;
+	float: left;
+}
+
+.ingredients {
+	width: 50%;
+	float: left;
+	ul {
+		padding-top: 0;
+		margin-top: 0;
+		list-style: none;
+	}
+	li {
+		border-bottom: 1px solid rgba($black,0.25);
+		padding: 5px 0;
+	}
+}

@@ -1,13 +1,47 @@
 <? get_header(); ?>
-
 <body>
 	<header>
 		<? get_template_part( 'nav' ); ?>
-
 	</header>
 	<section class="section-hero">
 		<div class="hero-content">
-			<h1>One salad per week for a year.</h1>
+			<h1><small><span class="fa-stack">
+			  <i class="fa fa-circle fa-stack-2x"></i>
+			  <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
+			</span></small> 52 salads</h1>
+			<h2>One salad per week for a year.</h2>
+				<!-- <ul class="nav">
+					<li>
+						<a href="">
+							<span class="fa-stack">
+								<i class="fa fa-circle-thin fa-stack-2x"></i>
+								<i class="fa fa-facebook fa-stack-1x"></i>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="fa-stack">
+								<i class="fa fa-circle-thin fa-stack-2x"></i>
+								<i class="fa fa-twitter fa-stack-1x"></i>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="fa-stack">
+								<i class="fa fa-circle-thin fa-stack-2x"></i>
+								<i class="fa fa-facebook fa-stack-1x"></i>
+							</span>
+						</a>
+					</li>
+				</ul> -->
+				<div class="search-container">
+					<div class="search">
+						<i class="fa fa-search"></i>
+						Search for an ingredient...
+					</div>
+				</div>
 		</div>
 	</section>
 	<section class="section-salads">
@@ -15,7 +49,7 @@
 			<? query_posts('showposts=52&order=ASC'); ?>
 			<? $num_posts = $wp_query->post_count; ?>
 			<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-				<li>
+				<li class="salad">
 					<a class="salad-link-wrap" href="<?php the_permalink();?>">
 						<span class="salad-list-number">
 							<span><span><span class="circle">
@@ -38,7 +72,7 @@
 			<? endwhile; ?>
 			<? $i = $num_posts; ?>
 			<? while ( $i < 52 ) : $i++ ?>
-				<li>
+				<li class="pending">
 					<div class="salad-link-wrap">
 						<span class="salad-list-number">
 							<span><span><span class="circle">
@@ -48,7 +82,7 @@
 						<span class="salad-list-content">
 							<span class="salad-list-date"><i class="fa fa-clock-o"></i></span>
 						</span>
-						<span class="salad-list-thumbnail" style="background-image:url('http://52salads.kurtemch.com/img/salad-0<? echo $i; ?>.jpg');"></span>
+						<!-- <span class="salad-list-thumbnail" style="background-image:url('http://52salads.kurtemch.com/img/salad-0<? echo $i; ?>.jpg');"></span> -->
 						<img src="http://52salads.kurtemch.com/img/blank.png" alt="">
 					</div>
 				</li>
@@ -57,71 +91,5 @@
 			<? endif; ?>
 		</ul>
 	</section>
+	<? get_footer(); ?>
 </body>
-
-
-<? /*
-	<body>
-		<header>
-			<? get_template_part( 'nav' ); ?>
-			<h1 class="site-title"><span class="fa-stack">
-			  <i class="fa fa-circle fa-stack-2x"></i>
-			  <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
-			</span> 52 Salads</h1>
-			<p>One salad a week for a year. Don&rsquo;t miss a salad:
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-envelope"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-pinterest"></i></a>
-			</p>
-		</header>
-		<section class="section-hero">
-
-		</section>
-		<section class="section-salads">
-			<ul class="posts" style="display:none;">
-				<? query_posts('showposts=52&order=ASC'); ?>
-				<? $num_posts = $wp_query->post_count; ?>
-				<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-					<li class="salad">
-						<div class="salad-wrap">
-							<div class="salad-layout-block">
-								<img src="http://52salads.kurtemch.com/img/blank.png" alt="blank">
-							</div>
-							<? $image = get_field('image'); if( !empty($image) ): ?>
-							<div class="salad-thm">
-								<div class="salad-bg" style="background-image:url(<?php echo $image['url']; ?>);"></div>
-							</div>
-							<?php endif; ?>
-							<div class="salad-info">
-								<div class="salad-number">#<? the_field('salad_number'); ?></div>
-								<div class="salad-date"><? the_date('m/d/Y'); ?></div>
-							</div>
-							<div class="salad-summary">
-								<a href="<? the_permalink(); ?>">Link</a>
-								<? the_field('ingredient_list'); ?>
-							</div>
-						</div>
-					</li>
-				<? endwhile; ?>
-				<? $i = $num_posts; ?>
-				<? while ( $i < 52 ) : $i++ ?>
-					<li class="salad">
-						<div class="salad-wrap">
-							<div class="salad-layout-block">
-								<img src="http://52salads.kurtemch.com/img/blank.png" alt="blank">
-							</div>
-							<div class="salad-info not-yet">
-								<h2>#<? echo $i; ?></h2>
-							</div>
-						</div>
-					</li>
-				<? endwhile; ?>
-				<? else : ?>
-				<? endif; ?>
-			</ul>
-		</section>
-		<? get_footer(); ?>
-	</body>
-</html>
-*/ ?>
