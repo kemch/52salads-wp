@@ -250,7 +250,7 @@ th {
   width: 100%;
 }
 
-.container, header, .salad-list-date, .salad-list-ingredients {
+.container, header, .salad-list-date, .salad-list-ingredients, .in-season, .info-content {
   padding: 25px;
 }
 
@@ -310,10 +310,6 @@ h3 {
 
 p {
   margin-bottom: 15.428px;
-  font-weight: 400;
-}
-
-li {
   font-weight: 400;
 }
 
@@ -384,7 +380,7 @@ header {
 }
 
 .search {
-  background-color: #b8ce47;
+  background-color: #afc735;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
@@ -606,4 +602,60 @@ footer {
 .ingredients li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   padding: 5px 0;
+}
+
+.section-season {
+  background-color: #afc735;
+}
+.section-season:before, .section-season:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.section-season:after {
+  clear: both;
+}
+
+.in-season {
+  text-align: center;
+  color: white;
+  max-width: 550px;
+  margin: 0 auto;
+}
+.in-season ul {
+  list-style: none;
+  padding: 0;
+}
+.in-season li {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+
+.season-content {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.section-info {
+  background-color: #afc735;
+}
+.section-info:before, .section-info:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.section-info:after {
+  clear: both;
+}
+
+.info-content {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 750px;
+  margin: 0 auto;
 }

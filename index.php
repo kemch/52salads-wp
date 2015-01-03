@@ -1,15 +1,13 @@
 <? get_header(); ?>
 <body>
-	<header>
-		<? get_template_part( 'nav' ); ?>
-	</header>
+	<? get_template_part( 'nav' ); ?>
 	<section class="section-hero">
 		<div class="hero-content">
 			<h1><small><span class="fa-stack">
 			  <i class="fa fa-circle fa-stack-2x"></i>
 			  <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
 			</span></small> 52 salads</h1>
-			<h2>One salad per week for a year.</h2>
+			<h2>One salad per week for a year. <a href="#" class="js-details" data-target=".section-info"><i class="fa fa-info-circle"></i></a></h2>
 				<!-- <ul class="nav">
 					<li>
 						<a href="">
@@ -44,9 +42,15 @@
 				</div>
 		</div>
 	</section>
+	<section class="section-info" style="display:none;">
+		<div class="info-content">
+			<? $post = get_page_by_path('info'); ?>
+			<? echo $post->post_content; ?>
+		</div>
+	</section>
 	<section class="section-salads">
 		<ul class="salad-list">
-			<? query_posts('showposts=52&order=ASC'); ?>
+			<? query_posts('showposts=52&order=ASC&category_name=salad'); ?>
 			<? $num_posts = $wp_query->post_count; ?>
 			<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<li class="salad">
@@ -89,6 +93,7 @@
 			<? endwhile; ?>
 			<? else : ?>
 			<? endif; ?>
+			<? wp_reset_query(); ?>
 		</ul>
 	</section>
 	<? get_footer(); ?>

@@ -6,6 +6,7 @@
 	<header>
 		<? get_template_part( 'nav' ); ?>
 	</header>
+	<? query_posts('category_name=salad'); ?>
 	<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<section class="section-hero">
 		<div class="hero-content">
@@ -86,5 +87,6 @@
 	<? endwhile; ?>
 	<? else : ?>
 	<? endif; ?>
+	<? wp_reset_query(); ?>
 	<? get_footer(); ?>
 </body>

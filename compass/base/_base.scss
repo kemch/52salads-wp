@@ -16,7 +16,7 @@
 $white: #FFF;
 $black: #000000;
 // $dark-green: #34450E;
-$green: #B8CE47;
+$green: darken(#B8CE47,5);
 $medium-green: lighten($green,10);
 $dark-green: darken($green,30);
 $light-green: lighten($green,10);
@@ -157,7 +157,7 @@ ul {
 }
 
 li {
-	font-weight: 400;
+	// font-weight: 400;
 }
 
 // =================================
@@ -466,4 +466,48 @@ footer {
 		border-bottom: 1px solid rgba($black,0.25);
 		padding: 5px 0;
 	}
+}
+
+.section-season {
+	background-color: $green;
+	@include clear;
+}
+
+.in-season {
+	text-align: center;
+	color: $white;
+	max-width: 550px;
+	margin: 0 auto;
+	@extend %spacing;
+
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+	li {
+		@include inline-block;
+	}
+}
+
+.season-name {
+
+}
+.season-content {
+	font-weight: 400;
+	color: rgba(white,0.8);
+}
+
+.section-info {
+	background-color: $green;
+	@include clear;
+}
+
+.info-content {
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: 400;
+	color: rgba(white,0.8);
+	max-width: 750px;
+	margin: 0 auto;
+	@extend %spacing;
 }
