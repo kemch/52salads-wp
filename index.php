@@ -67,10 +67,8 @@
 						<? $image = get_field('image'); if( !empty($image) ): ?>
 						<?php endif; ?>
 						<span class="salad-list-thumbnail" style="background-image:url(<?php echo $image['url']; ?>);">
-						<!-- <span class="salad-list-thumbnail" style="background-image:url('http://52salads.kurtemch.com/img/salad-01.jpg');"> -->
 						</span>
-						<img src="http://52salads.kurtemch.com/img/blank.png" alt="blank">
-						<!-- <img src="http://placehold.it/500" alt=""> -->
+						<img src="<? bloginfo('stylesheet_directory'); ?>/img/blank.png" alt="blank">
 					</a>
 				</li>
 			<? endwhile; ?>
