@@ -1,8 +1,5 @@
 <? get_header(); ?>
 <body>
-<div class="mockup">
-	<img src="https://s3.amazonaws.com/f.cl.ly/items/1b001z3b0w1q1L3J0e3J/post.png" alt="">
-</div>
 	<header>
 		<? get_template_part( 'nav' ); ?>
 	</header>
