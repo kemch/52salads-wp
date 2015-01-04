@@ -236,21 +236,21 @@ th {
   display: none;
 }
 
-.salad-list-number, .salad-list-content, .salad-list-date, .salad-list-thumbnail {
+.vin-list-content, .vin-list-name, .vin-list-thumbnail, .salad-list-number, .salad-list-content, .salad-list-date, .salad-list-thumbnail {
   display: block;
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.salad-list-ingredients {
+.vin-list-used, .salad-list-ingredients {
   display: block;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
-.container, header, .salad-list-date, .salad-list-ingredients, .in-season, .info-content {
+.container, header, .vin-list-name, .vin-list-used, .salad-list-date, .salad-list-ingredients, .in-season, .info-content {
   padding: 25px;
 }
 
@@ -264,6 +264,7 @@ body {
   font-family: "adelle", georgia, serif;
   font-size: 14px;
   line-height: 1.428;
+  background-color: #322117;
   color: #322117;
 }
 
@@ -291,7 +292,7 @@ h1 small {
   position: relative;
 }
 
-h2 {
+h2, h3 {
   font-weight: 300;
   letter-spacing: 3px;
   margin: 0.5em 0;
@@ -301,16 +302,17 @@ h2 {
 }
 
 h3 {
-  color: #322117;
-  font-size: 1.5em;
-  margin: 0 0 0.5em 0;
-  font-weight: 300;
-  line-height: 1;
+  font-size: 1em;
+  letter-spacing: 2px;
 }
 
 p {
   margin-bottom: 15.428px;
   font-weight: 400;
+}
+
+section {
+  background: white;
 }
 
 header {
@@ -417,6 +419,83 @@ footer {
   background-color: #322117;
   padding: 15px;
   width: 100%;
+}
+
+.vin-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #322117;
+}
+.vin-list:before, .vin-list:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.vin-list:after {
+  clear: both;
+}
+.vin-list li {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  border-left: 1px solid #322117;
+  border-bottom: 1px solid #322117;
+  width: 20%;
+  float: left;
+}
+.vin-list li a {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+.vin-list li img {
+  display: block;
+}
+
+.vin-list-content {
+  display: block;
+  text-align: center;
+}
+.vin-list-content img {
+  margin: 0 auto;
+}
+.vin-list-content .vin-bottle {
+  margin-top: 20px;
+}
+
+.vin-list-name {
+  text-align: center;
+  font-weight: 100;
+}
+
+.vin-list-used {
+  text-align: center;
+  font-weight: 100;
+}
+
+.vin-list-thumbnail {
+  -moz-background-size: 25% auto;
+  -o-background-size: 25% auto;
+  -webkit-background-size: 25% auto;
+  background-size: 25% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.bottle-image {
+  width: 50%;
+  float: left;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+  background: #afc735 url(../img/bottle.svg) scroll no-repeat center center;
+  -moz-background-size: 50% auto;
+  -o-background-size: 50% auto;
+  -webkit-background-size: 50% auto;
+  background-size: 50% auto;
+}
+
+.post-vinaigrettes .content-ingredients {
+  margin-top: 25px;
 }
 
 .salad {
