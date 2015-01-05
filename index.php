@@ -3,10 +3,11 @@
 	<? get_template_part( 'nav' ); ?>
 	<section class="section-hero">
 		<div class="hero-content">
-			<h1><small><span class="fa-stack">
+			<!-- <h1><small><span class="fa-stack">
 			  <i class="fa fa-circle fa-stack-2x"></i>
 			  <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
-			</span></small> 52 salads</h1>
+			</span></small> 52 salads</h1> -->
+			<h1><img src="<? bloginfo('stylesheet_directory');?>/img/logo.svg" alt="52 salads"></h1>
 			<h2>One salad per week for a year. <a href="#" class="js-details" data-target=".section-info"><i class="fa fa-info-circle"></i></a></h2>
 				<!-- <ul class="nav">
 					<li>
