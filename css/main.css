@@ -250,7 +250,7 @@ th {
   width: 100%;
 }
 
-.container, header, .vin-list-name, .vin-list-used, .salad-list-date, .salad-list-ingredients, .in-season, .info-content {
+.container, header, footer, .vin-list-name, .vin-list-used, .salad-list-date, .salad-list-ingredients, .in-season, .info-content {
   padding: 25px;
 }
 
@@ -417,8 +417,13 @@ header {
 
 footer {
   background-color: #322117;
-  padding: 15px;
   width: 100%;
+  text-align: center;
+}
+
+.copy-info {
+  font-size: 0.875em;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .vin-list {
@@ -684,7 +689,7 @@ footer {
 }
 
 .section-season {
-  background-color: #afc735;
+  background-color: #9d542a;
 }
 .section-season:before, .section-season:after {
   display: table;
@@ -711,6 +716,11 @@ footer {
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
+}
+
+.season-name {
+  font-size: 1.5em;
+  font-weight: 400;
 }
 
 .season-content {

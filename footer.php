@@ -1,5 +1,5 @@
 <footer>
-
+<p class="copy-info">Copyright © Make 52 Salads. All Rights Reserved.</p>
 </footer>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

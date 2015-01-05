@@ -292,9 +292,14 @@ header {
 }
 
 footer {
+	@extend %spacing;
 	background-color: $brown;
-	padding: 15px;
 	width: 100%;
+	text-align: center;
+}
+.copy-info {
+	font-size: 0.875em;
+	color: rgba($white,0.3);
 }
 // =================================
 // =================================
@@ -559,7 +564,7 @@ footer {
 }
 
 .section-season {
-	background-color: $green;
+	background-color: $burnt-orange;
 	@include clear;
 }
 
@@ -580,7 +585,8 @@ footer {
 }
 
 .season-name {
-
+	font-size: 1.5em;
+	font-weight: 400;
 }
 .season-content {
 	font-weight: 400;
