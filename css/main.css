@@ -226,16 +226,6 @@ th {
   padding: 0;
 }
 
-.mockup {
-  opacity: 0.8;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  text-align: center;
-  display: none;
-}
-
 .vin-list-content, .vin-list-name, .vin-list-thumbnail, .salad-list-number, .salad-list-content, .salad-list-date, .salad-list-thumbnail {
   display: block;
   position: absolute;
@@ -294,11 +284,14 @@ h1 small {
 
 h2, h3 {
   font-weight: 300;
-  letter-spacing: 3px;
   margin: 0.5em 0;
   line-height: 1;
-  font-size: 1.75em;
   color: #9d542a;
+}
+
+h2 {
+  font-size: 1.75em;
+  letter-spacing: 3px;
 }
 
 h3 {
@@ -306,6 +299,16 @@ h3 {
   letter-spacing: 2px;
 }
 
+@media (min-width: 0px) and (max-width: 512px) {
+  h2 {
+    font-size: 1em;
+    letter-spacing: 2px;
+  }
+
+  h3 {
+    font-size: 0.875em;
+  }
+}
 p {
   margin-bottom: 15.428px;
   font-weight: 400;
@@ -318,6 +321,29 @@ section {
 header {
   background-color: #322117;
   width: 100%;
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  header {
+    display: none;
+    padding: 15px 15px 0 15px;
+  }
+}
+
+.section-menu {
+  display: none;
+}
+.section-menu a {
+  display: block;
+  text-align: center;
+  background-color: #322117;
+  padding: 5px;
+  color: white;
+  font-size: 20px;
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  .section-menu {
+    display: block;
+  }
 }
 
 .nav {
@@ -347,6 +373,12 @@ header {
   color: #322117;
   font-size: 2em;
 }
+@media (min-width: 0px) and (max-width: 512px) {
+  .nav li {
+    display: block;
+    padding: 5px;
+  }
+}
 
 .section-hero {
   text-align: center;
@@ -356,7 +388,7 @@ header {
 
 .hero-content {
   text-align: center;
-  padding-top: 40px;
+  padding: 40px 25px 20px 25px;
   width: 100%;
   min-height: 230px;
   position: relative;
@@ -536,13 +568,23 @@ footer {
 .salad-list li img {
   display: block;
 }
+@media (min-width: 0px) and (max-width: 1024px) {
+  .salad-list li {
+    width: 50%;
+  }
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  .salad-list li {
+    width: 100%;
+  }
+}
 
 .salad-link-wrap {
   text-decoration: none;
   display: block;
   color: inherit;
 }
-.salad-link-wrap:hover .salad-list-thumbnail {
+.no-touch .salad-link-wrap:hover .salad-list-thumbnail {
   -moz-background-size: 125% auto;
   -o-background-size: 125% auto;
   -webkit-background-size: 125% auto;
@@ -550,13 +592,13 @@ footer {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
-.salad-link-wrap:hover .salad-list-number .number {
+.no-touch .salad-link-wrap:hover .salad-list-number .number {
   color: white;
 }
-.salad-link-wrap:hover .salad-list-number .circle {
+.no-touch .salad-link-wrap:hover .salad-list-number .circle {
   background-color: rgba(255, 255, 255, 0);
 }
-.salad-link-wrap:hover .salad-list-content {
+.no-touch .salad-link-wrap:hover .salad-list-content {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
@@ -618,15 +660,27 @@ footer {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
+.no-touch .salad-list-content {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
 
 .salad-list-date {
   text-align: center;
   font-weight: 100;
 }
+.touch .salad-list-date span {
+  padding: 5px;
+  background-color: #322117;
+}
 
 .salad-list-ingredients {
   text-align: center;
   font-weight: 100;
+}
+.touch .salad-list-ingredients span {
+  padding: 5px;
+  background-color: #322117;
 }
 
 .salad-list-thumbnail {
@@ -668,10 +722,21 @@ footer {
 .content-recipe h2 {
   text-align: center;
 }
+@media (min-width: 0px) and (max-width: 512px) {
+  .content-recipe {
+    width: 100%;
+    padding: 0px 25px;
+  }
+}
 
 .salad-photo {
   width: 50%;
   float: left;
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  .salad-photo {
+    width: 100%;
+  }
 }
 
 .ingredients {
@@ -686,6 +751,15 @@ footer {
 .ingredients li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   padding: 5px 0;
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  .ingredients {
+    width: 100%;
+    padding: 25px;
+  }
+  .ingredients ul {
+    padding: 0;
+  }
 }
 
 .section-season {

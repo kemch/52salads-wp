@@ -1,4 +1,4 @@
-<header>
+<header class="js-nav">
 <nav>
 	<ul class="nav">
 		<li><a class="js-nav-salads" href="/"><i class="fa fa-cutlery"></i>&nbsp;&nbsp;&nbsp;Salads</a></li>
@@ -8,6 +8,9 @@
 	</ul>
 </nav>
 </header>
+<section class="section-menu">
+	<a href="#" class="js-menu"><i class="fa fa-bars"></i></a>
+</section>
 <div class="js-in-season" style="display:none;">
 <section class="section-season">
 	<div class="in-season">
