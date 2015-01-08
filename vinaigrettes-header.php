@@ -14,7 +14,7 @@
 						<h3 class="vin-list-name"><? the_title(); ?></h3>
 						<!-- <img class="vin-bottle" src="<? bloginfo('stylesheet_directory'); ?>/img/bottle.svg" alt="bottle"> -->
 						<span class="vin-list-used">
-							hi
+							<!-- hi -->
 						</span>
 					</span>
 					<span class="vin-list-thumbnail" style="background-image:url(<? bloginfo('stylesheet_directory'); ?>/img/bottle.svg);">
