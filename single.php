@@ -12,23 +12,16 @@
 		<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<section class="section-hero">
 				<div class="salad-hero">
-					<span class="salad-list-number as-heading">
+					<div class="salad-list-number as-heading">
 						<span><span><span class="circle">
 							<span class="number"><small>#</small>2</span>
 						</span></span></span>
-					</span>
-					<h2><? the_title(); ?></h2>
-				</div>
-				<div class="hero-content" style="float: left;">
-					<!-- <h1><small>#</small><? the_field('salad_number'); ?></h1> -->
-					<!-- <h2><? the_title(); ?></h2> -->
-					<!-- <h2><? the_title(); ?></h2> -->
+					</div>
 				</div>
 			</section>
-			<!-- <h2><? the_title(); ?></h2> -->
 			<section class="section-content">
-				<!-- <h1 style="text-align:center;">1</h1> -->
 				<div class="date"><? the_date(); ?></div>
+				<h3><? the_title(); ?></h3>
 				<h2 class="ingredients-header">Ingredients</h2>
 				<div class="content-ingredients">
 					<? $image = get_field('image'); if( !empty($image) ): ?>
