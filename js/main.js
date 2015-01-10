@@ -35,7 +35,7 @@ $(function(){
 	$('.section-vinaigrettes').show();
 	var vin = $('.vin-list li a');
 	vin.each(function(){
-		$(this).click(function(e){
+		$(this).on('touchstart click', function(e){
 			showVin($(this));
 			e.preventDefault();
 		});
