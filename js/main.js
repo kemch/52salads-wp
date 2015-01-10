@@ -25,3 +25,41 @@ $(function(){
 		e.preventDefault();
 	});
 });
+
+var currentPage = 'a[href="' + window.location.hash + '"]';
+if ($('.single-vinaigrettes').length) {
+	showVin($(currentPage));
+}
+
+$(function(){
+	$('.section-vinaigrettes').show();
+	var vin = $('.vin-list li a');
+	vin.each(function(){
+		$(this).click(function(e){
+			showVin($(this));
+			e.preventDefault();
+		});
+	});
+});
+function showVin(el, e) {
+	var url = el.attr('data-url');
+	var hash = el.attr('href');
+	var title = '52 salads | ' + el.text();
+	$('.section-hero').slideUp(400);
+	$('.vin-list li').removeClass('active');
+	el.parents('li').addClass('active');
+	$('.post-vinaigrettes').slideUp(200);
+	$.ajax({
+		url: url,
+		cache: false
+	}).done(function(html){
+		console.log('done');
+
+		window.history.pushState("", title, hash);
+		$('.post-vinaigrettes').html(html).hide();
+		setTimeout(function(){
+			$('.post-vinaigrettes').fadeIn(200);
+		},400);
+	});
+}
+

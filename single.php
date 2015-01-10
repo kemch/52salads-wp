@@ -24,12 +24,16 @@
 				<h3><? the_title(); ?></h3>
 				<h2 class="ingredients-header">Ingredients</h2>
 				<div class="content-ingredients">
-					<? $image = get_field('image'); if( !empty($image) ): ?>
+					<? $image = get_field('content_image'); if( !empty($image) ): ?>
 						<img class="salad-photo" src="<?php echo $image['url']; ?>" alt="image">
+					<? else: ?>
+						<? $image = get_field('image'); if( !empty($image) ): ?>
+							<img class="salad-photo" src="<?php echo $image['url']; ?>" alt="image">
+						<? endif; ?>
+					<? endif; ?>
 						<div class="ingredients">
 							<? the_field('ingredients'); ?>
 						</div>
-					<?php endif; ?>
 				</div>
 				<section class="section-recipe">
 					<div class="content-recipe">
@@ -74,9 +78,10 @@
 		<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<section class="section-content post-vinaigrettes">
 				<div class="content-ingredients">
-					<div class="bottle-image">
+					<h2 class="ingredients-header">Ingredients</h2>
+<!-- 					<div class="bottle-image">
 						<img src="<? bloginfo('stylesheet_directory');?>/img/blank.png" alt="blank">
-					</div>
+					</div> -->
 					<div class="ingredients">
 						<? the_field('ingredients'); ?>
 					</div>

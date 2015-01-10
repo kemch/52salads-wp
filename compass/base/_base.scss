@@ -304,12 +304,15 @@ header {
 
 .hero-content {
 	text-align: center;
-	padding: 20px $unit 20px $unit;
+	padding: 50px $unit 20px $unit;
 	@include clear;
 	width: 100%;
 	// min-height: 230px;
 	position: relative;
 	// background-color: $color-hero-background;
+	h1 {
+		color: $light-red;
+	}
 }
 
 .search-container {
@@ -384,6 +387,7 @@ footer {
 	border-top: 1px solid $brown;
 	// border-right: 1px solid $brown;
 	li {
+		@include transition(background 0.2s ease);
 		position: relative;
 		list-style: none;
 		overflow: hidden;
@@ -391,6 +395,7 @@ footer {
 		border-bottom: 1px solid $brown;
 		width: 20%;
 		float: left;
+		background-color: white;
 		a {
 			text-decoration: none;
 			display: block;
@@ -398,6 +403,15 @@ footer {
 		}
 		img {
 			display: block;
+		}
+		&.active {
+			background-color: $green;
+			a {
+				color: white;
+			}
+			img {
+				@include opacity(0.5);
+			}
 		}
 	}
 }
@@ -677,13 +691,16 @@ footer {
 	max-width: 750px;
 	margin: 0 auto;
 	img {
-		border-radius: 2px;
+		// border-radius: 5px;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
 	}
 }
 
 .section-recipe {
 	padding-top: 20px;
 	border-top: 1px solid rgba(black,0.1);
+	padding-bottom: 20px;
 }
 
 .content-recipe {

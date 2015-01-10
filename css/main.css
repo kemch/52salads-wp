@@ -410,7 +410,7 @@ header {
 
 .hero-content {
   text-align: center;
-  padding: 20px 25px 20px 25px;
+  padding: 50px 25px 20px 25px;
   width: 100%;
   position: relative;
 }
@@ -421,6 +421,9 @@ header {
 }
 .hero-content:after {
   clear: both;
+}
+.hero-content h1 {
+  color: #f1644a;
 }
 
 .search-container {
@@ -498,6 +501,10 @@ footer {
   clear: both;
 }
 .vin-list li {
+  -moz-transition: background 0.2s ease;
+  -o-transition: background 0.2s ease;
+  -webkit-transition: background 0.2s ease;
+  transition: background 0.2s ease;
   position: relative;
   list-style: none;
   overflow: hidden;
@@ -505,6 +512,7 @@ footer {
   border-bottom: 1px solid #322117;
   width: 20%;
   float: left;
+  background-color: white;
 }
 .vin-list li a {
   text-decoration: none;
@@ -513,6 +521,16 @@ footer {
 }
 .vin-list li img {
   display: block;
+}
+.vin-list li.active {
+  background-color: #afc735;
+}
+.vin-list li.active a {
+  color: white;
+}
+.vin-list li.active img {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
 }
 
 .vin-list-content {
@@ -790,12 +808,14 @@ footer {
   clear: both;
 }
 .content-ingredients img {
-  border-radius: 2px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .section-recipe {
   padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
 }
 
 .content-recipe {

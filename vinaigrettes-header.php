@@ -4,12 +4,12 @@
 		<h2>Bases for Vinaigrettes</h2>
 	</div>
 </section>
-<section class="section-vinaigrettes">
+<section class="section-vinaigrettes" style="display:none;">
 	<ul class="vin-list">
 		<? query_posts('category_name=vinaigrette'); ?>
 		<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<li>
-				<a href="<? the_permalink(); ?>">
+				<a href="#<? echo $post->post_name ?>" data-url="<? the_permalink();?>">
 					<span class="vin-list-content">
 						<h3 class="vin-list-name"><? the_title(); ?></h3>
 						<!-- <img class="vin-bottle" src="<? bloginfo('stylesheet_directory'); ?>/img/bottle.svg" alt="bottle"> -->
@@ -21,7 +21,6 @@
 					</span>
 					<img src="<? bloginfo('stylesheet_directory'); ?>/img/blank.png" alt="blank">
 				</a>
-
 			</li>
 		<? endwhile; ?>
 		<? endif; ?>
