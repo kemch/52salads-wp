@@ -849,15 +849,15 @@ footer {
   padding-bottom: 20px;
 }
 
-.content-recipe {
+.content-recipe, .content-intro {
   max-width: 550px;
   margin: 0 auto;
 }
-.content-recipe h2 {
+.content-recipe h2, .content-intro h2 {
   text-align: center;
 }
 @media (min-width: 0px) and (max-width: 512px) {
-  .content-recipe {
+  .content-recipe, .content-intro {
     width: 100%;
     padding: 0px 25px;
   }
