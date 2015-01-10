@@ -22,11 +22,9 @@
 			<section class="section-content">
 				<div class="date"><? the_date(); ?></div>
 				<h3><? the_title(); ?></h3>
-				<section class="section-content">
-					<div class="content-intro">
-						<? the_content(); ?>
-					</div>
-				</section>
+				<div class="content-intro">
+					<? the_content(); ?>
+				</div>
 				<h2 class="ingredients-header">Ingredients</h2>
 				<div class="content-ingredients">
 					<? $image = get_field('content_image'); if( !empty($image) ): ?>
