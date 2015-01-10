@@ -760,6 +760,37 @@ footer {
   background-position: center center;
 }
 
+.section-tips {
+  padding: 20px;
+}
+.section-tips:before, .section-tips:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.section-tips:after {
+  clear: both;
+}
+.section-tips ul {
+  list-style: none;
+  padding: 0;
+}
+.section-tips li {
+  padding: 2px 0;
+  border-bottom: 1px solid rgba(50, 33, 23, 0.2);
+}
+.section-tips li a {
+  text-decoration: none;
+}
+.section-tips li:last-child {
+  border-bottom: 0;
+}
+
+.tips-content {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
 .section-content {
   padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);

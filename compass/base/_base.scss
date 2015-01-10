@@ -654,6 +654,37 @@ footer {
 
 // =================================
 // =================================
+// == TIPS CONTENT
+// =================================
+// =================================
+
+.section-tips {
+	@include clear;
+	padding: 20px;
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+	li {
+		padding: 2px 0;
+		border-bottom: 1px solid rgba($brown,0.2);
+		a {
+			text-decoration: none;
+		}
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+}
+
+.tips-content {
+	max-width: 550px;
+	margin: 0 auto;
+}
+
+
+// =================================
+// =================================
 // == POST CONTENT
 // =================================
 // =================================
