@@ -11,13 +11,25 @@
 		<?// query_posts('category_name=salad'); ?>
 		<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<section class="section-hero">
-				<div class="hero-content">
-					<h1>#<? the_field('salad_number'); ?></h1>
+				<div class="salad-hero">
+					<span class="salad-list-number as-heading">
+						<span><span><span class="circle">
+							<span class="number"><small>#</small>2</span>
+						</span></span></span>
+					</span>
 					<h2><? the_title(); ?></h2>
-					<div class="date"><? the_date(); ?></div>
+				</div>
+				<div class="hero-content" style="float: left;">
+					<!-- <h1><small>#</small><? the_field('salad_number'); ?></h1> -->
+					<!-- <h2><? the_title(); ?></h2> -->
+					<!-- <h2><? the_title(); ?></h2> -->
 				</div>
 			</section>
+			<!-- <h2><? the_title(); ?></h2> -->
 			<section class="section-content">
+				<!-- <h1 style="text-align:center;">1</h1> -->
+				<div class="date"><? the_date(); ?></div>
+				<h2 class="ingredients-header">Ingredients</h2>
 				<div class="content-ingredients">
 					<? $image = get_field('image'); if( !empty($image) ): ?>
 						<img class="salad-photo" src="<?php echo $image['url']; ?>" alt="image">
@@ -26,11 +38,13 @@
 						</div>
 					<?php endif; ?>
 				</div>
-				<div class="content-recipe">
-					<h2>Recipe</h2>
-					<? the_field('recipe'); ?>
-				</div>
-				<div class="content-share">
+				<section class="section-recipe">
+					<div class="content-recipe">
+						<h2>Recipe</h2>
+						<? the_field('recipe'); ?>
+					</div>
+				</section>
+				<div class="content-share" style="display:none;">
 					<h2>Share</h2>
 					<ul class="share-links">
 						<li>
@@ -74,10 +88,12 @@
 						<? the_field('ingredients'); ?>
 					</div>
 				</div>
-				<div class="content-recipe">
-					<h2>Recipe</h2>
-					<? the_field('recipe'); ?>
-				</div>
+				<section class="section-recipe">
+					<div class="content-recipe">
+						<h2>Recipe</h2>
+						<? the_field('recipe'); ?>
+					</div>
+				</section>
 			</section>
 
 		<? endwhile; endif; ?>

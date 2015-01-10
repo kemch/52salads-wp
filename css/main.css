@@ -251,7 +251,7 @@ th {
 }
 
 body {
-  font-family: "adelle", georgia, serif;
+  font-family: "adelle-sans", "helvetica neue", helvetica, arial, serif;
   font-size: 14px;
   line-height: 1.428;
   background-color: #322117;
@@ -272,31 +272,33 @@ img {
 }
 
 h1 {
+  font-family: "cosmopolitan", script;
   font-weight: 300;
-  font-size: 4.75em;
-  margin: 0 0 0.5em 0;
+  font-size: 10em;
+  margin: 0 0 0.25em 0;
   line-height: 1;
 }
 h1 small {
-  top: -10px;
+  font-family: "adelle-sans", "helvetica neue", helvetica, arial, serif;
+  top: -15px;
   position: relative;
 }
 
 h2, h3 {
-  font-weight: 300;
+  font-weight: 600;
   margin: 0.5em 0;
   line-height: 1;
-  color: #9d542a;
 }
 
 h2 {
-  font-size: 1.75em;
-  letter-spacing: 3px;
+  font-size: 1.5em;
+  letter-spacing: 1px;
 }
 
 h3 {
   font-size: 1em;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 @media (min-width: 0px) and (max-width: 512px) {
@@ -316,6 +318,10 @@ p {
 
 section {
   background: white;
+}
+
+.logo {
+  margin-bottom: 0;
 }
 
 header {
@@ -380,19 +386,33 @@ header {
   }
 }
 
+.date {
+  font-size: 0.875em;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-align: center;
+}
+
 .section-hero {
   text-align: center;
   color: #322117;
+  background: #fefefc url(../img/pattern.png) fixed repeat;
   position: relative;
+}
+.section-hero:before, .section-hero:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.section-hero:after {
+  clear: both;
 }
 
 .hero-content {
   text-align: center;
-  padding: 40px 25px 20px 25px;
+  padding: 20px 25px 20px 25px;
   width: 100%;
-  min-height: 230px;
   position: relative;
-  background-color: white;
 }
 .hero-content:before, .hero-content:after {
   display: table;
@@ -427,6 +447,16 @@ header {
 }
 .search .fa {
   color: rgba(255, 255, 255, 0.5);
+}
+
+.salad-hero {
+  max-width: 750px;
+  margin: 0 auto;
+}
+.salad-hero h2 {
+  text-align: left;
+  margin-left: 180px;
+  padding-top: 90px;
 }
 
 .content-share {
@@ -595,6 +625,9 @@ footer {
 .no-touch .salad-link-wrap:hover .salad-list-number .number {
   color: white;
 }
+.no-touch .salad-link-wrap:hover .salad-list-number .number small {
+  color: rgba(255, 255, 255, 0.5);
+}
 .no-touch .salad-link-wrap:hover .salad-list-number .circle {
   background-color: rgba(255, 255, 255, 0);
 }
@@ -607,13 +640,19 @@ footer {
   z-index: 10;
 }
 .salad-list-number .number {
+  font-family: "cosmopolitan", script;
   -moz-transition: color 0.4s ease;
   -o-transition: color 0.4s ease;
   -webkit-transition: color 0.4s ease;
   transition: color 0.4s ease;
-  line-height: 2.425em;
-  color: #f1644a;
-  font-weight: 100;
+  line-height: 1.94em;
+}
+.salad-list-number .number small {
+  font-family: "adelle-sans", "helvetica neue", helvetica, arial, serif;
+  color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: -10px;
+  margin-left: -10px;
 }
 .salad-list-number .circle {
   -moz-transition: background-color 0.2s ease;
@@ -626,9 +665,9 @@ footer {
   *zoom: 1;
   *display: inline;
   border-radius: 50%;
-  font-size: 2em;
-  width: 2.5em;
-  height: 2.5em;
+  font-size: 3em;
+  width: 2em;
+  height: 2em;
   -webkit-backface-visibility: hidden;
   border: 3px solid #fff;
   background-color: white;
@@ -647,6 +686,17 @@ footer {
   display: table-cell;
   vertical-align: middle;
 }
+.salad-list-number.as-heading {
+  width: auto;
+  margin-top: 30px;
+  position: static;
+  float: left;
+  display: block;
+}
+.salad-list-number.as-heading .circle {
+  border-color: #afc735;
+  font-size: 5em;
+}
 
 .salad-list-content {
   -moz-transition: opacity 0.2s ease;
@@ -660,7 +710,7 @@ footer {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-.no-touch .salad-list-content {
+.touch .salad-list-content {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
@@ -699,7 +749,29 @@ footer {
 }
 
 .section-content {
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   background: white;
+}
+.section-content h2 {
+  margin-bottom: 25px;
+  font-family: "cosmopolitan", script;
+  letter-spacing: 0;
+  font-weight: normal;
+  font-size: 5em;
+  color: #f1644a;
+}
+
+.ingredients-header {
+  text-align: center;
+}
+.ingredients-header:before, .ingredients-header:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.ingredients-header:after {
+  clear: both;
 }
 
 .content-ingredients {
@@ -713,6 +785,14 @@ footer {
 }
 .content-ingredients:after {
   clear: both;
+}
+.content-ingredients img {
+  border-radius: 2px;
+}
+
+.section-recipe {
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .content-recipe {
@@ -744,6 +824,7 @@ footer {
   float: left;
 }
 .ingredients ul {
+  font-size: 12px;
   padding-top: 0;
   margin-top: 0;
   list-style: none;
@@ -751,6 +832,9 @@ footer {
 .ingredients li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   padding: 5px 0;
+}
+.ingredients li:last-child {
+  border-bottom: 0;
 }
 @media (min-width: 0px) and (max-width: 512px) {
   .ingredients {

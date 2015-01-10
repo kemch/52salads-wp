@@ -49,13 +49,19 @@ $color-hero-heading: $brown;
 $border-width: 4px;
 
 $adelle: "adelle", georgia, serif;
+$adelle-sans: "adelle-sans", "helvetica neue", helvetica, arial, serif;
+$cosmopolitan: "cosmopolitan", script;
+
+$base-font: $adelle-sans;
+$base-font-heading: $cosmopolitan;
+
 
 $base-font-size: 14px;
 $base-line-height: 1.428;
 
 $unit: 25px;
 
-$circle-radius: 2.5em;
+$circle-radius: 2em;
 
 // =================================
 // =================================
@@ -99,7 +105,7 @@ $circle-radius: 2.5em;
 }
 
 body {
-	font-family: $adelle;
+	font-family: $adelle-sans;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
 	background-color: $color-background;
@@ -125,31 +131,35 @@ img {
 }
 
 h1 {
+	font-family: $base-font-heading;
 	font-weight: 300;
-	font-size: 4.75em;
-	margin: 0 0 0.5em 0;
+	font-size: 10em;
+	margin: 0 0 0.25em 0;
 	line-height: 1;
 	small {
-		top: -10px;
+		font-family: $base-font;
+		top: -15px;
 		position: relative;
 	}
 }
 
 h2, h3 {
-	font-weight: 300;
+	// font-family: $base-font-heading;
+	font-weight: 600;
 	margin: 0.5em 0;
 	line-height: 1;
-	color: $burnt-orange;
+	// color: $burnt-orange;
 }
 
 h2 {
-	font-size: 1.75em;
-	letter-spacing: 3px;
+	font-size: 1.5em;
+	letter-spacing: 1px;
 }
 
 h3 {
 	font-size: 1em;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
 
 @include breakpoint($small) {
@@ -193,6 +203,10 @@ section {
 // == HEADER
 // =================================
 // =================================
+
+.logo {
+	margin-bottom: 0;
+}
 
 header {
 	@extend %spacing;
@@ -258,6 +272,14 @@ header {
 	}
 }
 
+
+.date {
+	font-size: 0.875em;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-align: center;
+}
+
 // =================================
 // =================================
 // == HOME HERO
@@ -265,8 +287,10 @@ header {
 // =================================
 
 .section-hero {
+	@include clear;
 	text-align: center;
 	color: $color-hero-heading;
+	background: lighten($green,50) url(../img/pattern.png) fixed repeat;
 	// padding-bottom: 20px;
 	position: relative;
 	// background: {
@@ -280,12 +304,12 @@ header {
 
 .hero-content {
 	text-align: center;
-	padding: 40px $unit 20px $unit;
+	padding: 20px $unit 20px $unit;
 	@include clear;
 	width: 100%;
-	min-height: 230px;
+	// min-height: 230px;
 	position: relative;
-	background-color: $color-hero-background;
+	// background-color: $color-hero-background;
 }
 
 .search-container {
@@ -307,6 +331,16 @@ header {
 	font-size: 1.25em;
 	.fa {
 		color: rgba($white,0.5);
+	}
+}
+
+.salad-hero {
+	max-width: 750px;
+	margin: 0 auto;
+	h2 {
+		text-align: left;
+		margin-left: 180px;
+		padding-top: 90px;
 	}
 }
 
@@ -334,11 +368,14 @@ footer {
 	font-size: 0.875em;
 	color: rgba($white,0.3);
 }
+
+
 // =================================
 // =================================
 // == HOME VINAIGRETTE LIST (5)
 // =================================
 // =================================
+
 
 .section-vinaigrettes {
 
@@ -443,6 +480,8 @@ footer {
 		overflow: hidden;
 		border-left: 4px solid $brown;
 		border-bottom: 4px solid $brown;
+		// border-left: 4px solid transparent;
+		// border-bottom: 4px solid transparent;
 		width: 20%;
 		float: left;
 		img {
@@ -474,6 +513,9 @@ footer {
 		.salad-list-number {
 			.number {
 				color: $white;
+				small {
+					color: rgba(white,0.5);
+				}
 			}
 			.circle {
 				background-color: rgba($white,0);
@@ -492,17 +534,27 @@ footer {
 	// This cluster is to center
 	// the circle.
 	.number {
+		font-family: $base-font-heading;
 		@include transition(color 0.4s ease);
 		line-height: $circle-radius*0.97;
-		// color: $black;
-		color: $color-link;
-		font-weight: 100;
+		// color: $color-link;
+		// font-size: 2em;
+		// font-weight: 100;
+		small {
+			font-family: $base-font;
+			color: rgba(black,0.2);
+			position: relative;
+			top: -10px;
+			margin-left: -10px;
+		}
 	}
+
+
 	.circle {
 		@include transition(background-color 0.2s ease);
 		@include inline-block;
 		border-radius: 50%;
-		font-size: 2em;
+		font-size: 3em;
 		width: $circle-radius;
 		height: $circle-radius;
 		 -webkit-backface-visibility: hidden;
@@ -521,6 +573,17 @@ footer {
 			vertical-align: middle;
 		}
 	}
+	&.as-heading {
+		width: auto;
+		margin-top: 30px;
+		position: static;
+		float: left;
+		display: block;
+		.circle {
+			border-color: $green;
+			font-size: 5em;
+		}
+	}
 	@include breakpoint($small) {
 		.circle {
 			// font-size: 1.25em;
@@ -536,7 +599,7 @@ footer {
 	z-index: 10;
 	color: $white;
 	@include opacity(0);
-	.no-touch & {
+	.touch & {
 		@include opacity(1);
 	}
 }
@@ -586,13 +649,36 @@ footer {
 // =================================
 
 .section-content {
+	padding-top: 20px;
+	border-top: 1px solid rgba(black,0.1);
 	background: white;
+	h2 {
+		margin-bottom: $unit;
+		font-family: $cosmopolitan;
+		letter-spacing: 0;
+		font-weight: normal;
+		font-size: 5em;
+		color: $light-red;
+	}
+}
+
+.ingredients-header {
+	@include clear;
+	text-align: center;
 }
 
 .content-ingredients {
 	@include clear;
 	max-width: 750px;
 	margin: 0 auto;
+	img {
+		border-radius: 2px;
+	}
+}
+
+.section-recipe {
+	padding-top: 20px;
+	border-top: 1px solid rgba(black,0.1);
 }
 
 .content-recipe {
@@ -619,6 +705,7 @@ footer {
 	width: 50%;
 	float: left;
 	ul {
+		font-size: 12px;
 		padding-top: 0;
 		margin-top: 0;
 		list-style: none;
@@ -626,6 +713,9 @@ footer {
 	li {
 		border-bottom: 1px solid rgba($black,0.25);
 		padding: 5px 0;
+		&:last-child {
+			border-bottom: 0;
+		}
 	}
 	@include breakpoint($small) {
 		width: 100%;

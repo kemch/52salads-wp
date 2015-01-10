@@ -7,8 +7,10 @@
 			  <i class="fa fa-circle fa-stack-2x"></i>
 			  <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
 			</span></small> 52 salads</h1> -->
-			<h1><img src="<? bloginfo('stylesheet_directory');?>/img/logo.svg" alt="52 salads"></h1>
-			<h2>One salad per week for a year. <a href="#" class="js-details" data-target=".section-info"><i class="fa fa-info-circle"></i></a></h2>
+			<h1 class="logo"><img src="<? bloginfo('stylesheet_directory');?>/img/logo.svg" alt="52 salads"></h1>
+			<h2>One salad per week for a year.
+			<!-- <a href="#" class="js-details" data-target=".section-info"><i class="fa fa-info-circle"></i></a> -->
+			</h2>
 				<!-- <ul class="nav">
 					<li>
 						<a href="">
@@ -58,7 +60,7 @@
 					<a class="salad-link-wrap" href="<?php the_permalink();?>">
 						<span class="salad-list-number">
 							<span><span><span class="circle">
-								<span class="number">#<? the_field('salad_number'); ?></span>
+								<span class="number"><small>#</small><? the_field('salad_number'); ?></span>
 							</span></span></span>
 						</span>
 						<span class="salad-list-content">
@@ -79,7 +81,7 @@
 					<div class="salad-link-wrap">
 						<span class="salad-list-number">
 							<span><span><span class="circle">
-								<span class="number">#<? echo $i; ?> </span>
+								<span class="number"><small>#</small><? echo $i; ?> </span>
 							</span></span></span>
 						</span>
 						<span class="salad-list-content">
