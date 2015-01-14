@@ -4,7 +4,7 @@
 	<section class="section-hero">
 		<div class="hero-content">
 			<h1>Salad Tips</h1>
-			<h2>Tips for making, storing, and creating salads</h2>
+			<h2><? the_content(); ?></h2>
 		</div>
 	</section>
 	<section class="section-tips">
