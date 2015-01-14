@@ -14,7 +14,7 @@
 				<div class="salad-hero">
 					<div class="salad-list-number as-heading">
 						<span><span><span class="circle">
-							<span class="number"><small>#</small>2</span>
+							<span class="number"><small>#</small><? the_field("salad_number"); ?></span>
 						</span></span></span>
 					</div>
 				</div>
