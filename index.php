@@ -9,8 +9,12 @@
 			</span></small> 52 salads</h1> -->
 			<h1 class="logo"><img src="<? bloginfo('stylesheet_directory');?>/img/logo.svg" alt="52 salads"></h1>
 			<h2>One salad per week for a year.
-			<!-- <a href="#" class="js-details" data-target=".section-info"><i class="fa fa-info-circle"></i></a> -->
+			<a href="#" class="js-details" data-target=".content-intro"><i class="fa fa-info-circle"></i></a>
 			</h2>
+			<div class="content-intro" style="display:none;">
+				<? $post = get_page_by_path('info'); ?>
+				<? echo $post->post_content; ?>
+			</div>
 				<!-- <ul class="nav">
 					<li>
 						<a href="">
@@ -45,7 +49,7 @@
 				</div>
 		</div>
 	</section>
-	<section class="section-info" style="display:none;">
+	<section class="sectionf-info" style="display:none;">
 		<div class="info-content">
 			<? $post = get_page_by_path('info'); ?>
 			<? echo $post->post_content; ?>

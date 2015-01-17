@@ -1,17 +1,27 @@
-<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<section class="section-content post-vinaigrettes single-vinaigrettes">
-		<div class="content-ingredients">
-			<h2 class="ingredients-header">Ingredients</h2>
-			<div class="ingredients">
-				<? the_field('ingredients'); ?>
-			</div>
+<? get_header(); ?>
+<body>
+	<? get_template_part( 'nav' ); ?>
+	<section class="section-hero">
+		<div class="hero-content">
+			<h1>Vinaigrettes</h1>
+			<? $post = get_page_by_path('vinaigrettes'); ?>
+			<? echo $post->post_content; ?>
 		</div>
-		<section class="section-recipe">
-			<div class="content-recipe">
-				<h2>Recipe</h2>
-				<? the_field('recipe'); ?>
-			</div>
-		</section>
 	</section>
-<? endwhile; endif; ?>
-
+	<section class="section-tips">
+		<div class="tips-content">
+			<ul>
+			<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+			<li>
+				<h3><a href="<? the_permalink();?>"><? the_title();?></a></h3>
+				<section class="section-content">
+					<? the_content(); ?>
+				</section>
+			</li>
+			<? endwhile; ?>
+			<? endif; ?>
+			</ul>
+		</div>
+	</section>
+	<? get_footer(); ?>
+</body>
