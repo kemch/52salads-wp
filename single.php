@@ -27,10 +27,10 @@
 				</div>
 				<h2 class="ingredients-header">Ingredients</h2>
 				<div class="content-ingredients">
-					<? $image = get_field('content_image'); if( !empty($image) ): ?>
+					<? $image = get_field('image'); if( !empty($image) ): ?>
 						<img class="salad-photo" src="<?php echo $image['url']; ?>" alt="image">
 					<? else: ?>
-						<? $image = get_field('image'); if( !empty($image) ): ?>
+						<? $image = get_field('content_image'); if( !empty($image) ): ?>
 							<img class="salad-photo" src="<?php echo $image['url']; ?>" alt="image">
 						<? endif; ?>
 					<? endif; ?>

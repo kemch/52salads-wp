@@ -67,7 +67,7 @@
 							<span class="salad-list-date"><span><?php the_date('m/d/Y');?></span></span>
 							<span class="salad-list-ingredients"><span><? the_title(); ?></span></span>
 						</span>
-						<? $image = get_field('image'); if( !empty($image) ): ?>
+						<? $image = get_field('content_image'); if( !empty($image) ): ?>
 						<?php endif; ?>
 						<span class="salad-list-thumbnail" style="background-image:url(<?php echo $image['url']; ?>);">
 						</span>
