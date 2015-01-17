@@ -383,6 +383,8 @@ footer {
 	a {
 		color: rgba($white,0.5);
 		text-decoration: none;
+		@include inline-block;
+		margin: 0 5px;
 	}
 }
 .copy-info {
