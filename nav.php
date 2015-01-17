@@ -1,7 +1,7 @@
 <header class="js-nav">
 <nav>
 	<ul class="nav">
-		<li><a class="js-nav-salads" href="/"><i class="fa fa-cutlery"></i>&nbsp;&nbsp;&nbsp;Salads</a></li>
+		<li><a class="js-nav-salads" href="/">Salads</a></li>
 		<li><a class="js-nav-vinaigrettes" href="/vinaigrettes">Vinaigrettes</a></li>
 		<li><a class="js-details" data-target=".js-in-season" href="#">In Season</a></li>
 		<li><a class="js-nav-hacks" href="/salad-tips">Salad Tips</a></li>
