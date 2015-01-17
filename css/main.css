@@ -386,6 +386,18 @@ header {
   }
 }
 
+.nav-social-links {
+  font-size: 125%;
+}
+.nav-social-links a {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  padding: 0 5px;
+}
+
 .date {
   font-size: 0.875em;
   letter-spacing: 1px;

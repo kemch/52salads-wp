@@ -63,3 +63,8 @@ function showVin(el, e) {
 	});
 }
 
+
+$('.js-pinterest').click(function()   {ga('send', 'event', 'pinterest-nav', 'click',   'Social Links');});
+$('.js-twitter').click(function()   {ga('send', 'event', 'twitter-nav', 'click',   'Social Links');});
+$('.js-facebook').click(function()   {ga('send', 'event', 'facebook-nav', 'click',   'Social Links');});
+
