@@ -320,6 +320,14 @@ section {
   background: white;
 }
 
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
 .logo {
   margin-bottom: 0;
 }
@@ -387,7 +395,7 @@ header {
 }
 
 .nav-social-links {
-  font-size: 125%;
+  font-size: 150%;
 }
 .nav-social-links a {
   display: inline-block;
@@ -490,13 +498,23 @@ header {
 
 footer {
   background-color: #322117;
-  width: 100%;
+  max-width: 990px;
+  margin: 0 auto;
   text-align: center;
-}
-
-.copy-info {
   font-size: 0.875em;
   color: rgba(255, 255, 255, 0.3);
+}
+footer:before, footer:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+footer:after {
+  clear: both;
+}
+footer a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
 }
 
 .vin-list {

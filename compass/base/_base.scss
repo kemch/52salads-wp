@@ -198,6 +198,13 @@ section {
 	@extend %spacing;
 }
 
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+
 // =================================
 // =================================
 // == HEADER
@@ -273,7 +280,7 @@ header {
 }
 
 .nav-social-links {
-	font-size: 125%;
+	font-size: 150%;
 	a {
 		@include inline-block;
 		padding: 0 5px;
@@ -365,14 +372,20 @@ header {
 }
 
 footer {
+	@include clear;
 	@extend %spacing;
 	background-color: $brown;
-	width: 100%;
+	max-width: 990px;
+	margin: 0 auto;
 	text-align: center;
-}
-.copy-info {
 	font-size: 0.875em;
 	color: rgba($white,0.3);
+	a {
+		color: rgba($white,0.5);
+		text-decoration: none;
+	}
+}
+.copy-info {
 }
 
 
