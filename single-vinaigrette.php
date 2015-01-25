@@ -15,7 +15,8 @@
 			<li>
 				<h3><a href="<? the_permalink();?>"><? the_title();?></a></h3>
 				<section class="section-content">
-					<? the_content(); ?>
+							<? the_field('ingredients'); ?>
+							<? the_field('recipe'); ?>
 				</section>
 			</li>
 			<? endwhile; ?>
