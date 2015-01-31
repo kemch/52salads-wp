@@ -223,6 +223,12 @@ section {
 	}
 }
 
+@include breakpoint($small) {
+	[class^=col-] {
+		width: 100%;
+	}
+}
+
 // =================================
 // =================================
 // == HEADER
@@ -240,13 +246,25 @@ header {
 	@include breakpoint($small) {
 		display: none;
 		padding: 15px 15px 0 15px;
+		position: fixed;
+		height: 100%;
+		top: 0;
+		width: 100%;
+		z-index: 10;
 	}
 }
 
 .section-menu {
 	display: none;
+
 	a {
 		display: block;
+		width: 44px;
+		height: 44px;
+		position: absolute;
+		z-index: 11;
+		top: 0;
+		right: 10px;
 		text-align: center;
 		background-color: $brown;
 		padding:5px;
@@ -293,6 +311,15 @@ header {
 		li {
 			display: block;
 			padding: 5px;
+			a {
+				font-size: 20px;
+				font-weight: 200;
+			}
+		}
+		a {
+			display: block;
+			padding-top: 10px;
+			padding-bottom: 10px;
 		}
 	}
 }
@@ -302,6 +329,29 @@ header {
 	a {
 		@include inline-block;
 		padding: 0 5px;
+	}
+	@include breakpoint($small) {
+
+		width: 100%;
+		a {
+			display: table-cell;
+			width: 1%;
+			vertical-align: middle;
+		}
+	}
+}
+
+@include breakpoint($small) {
+	.nav li.nav-social-links {
+		display: table;
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-top: 40px;
+		margin-left: 0;
+		a {
+			font-size: 30px;
+			color: rgba(white,0.5);
+		}
 	}
 }
 
@@ -336,9 +386,12 @@ header {
 
 .section-hero-salad {
 	@include background-size(100% auto);
+	background-color: $color-background;
 	background-repeat: no-repeat;
 	background-position: top center;
 	@include clear;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .salad-panel {
@@ -358,11 +411,20 @@ header {
 		font-weight: normal;
 		font-size: 30px;
 	}
+	@include breakpoint($small) {
+		padding: 15px 15px 20px 15px;
+		h3 {
+			font-size: 25px;
+		}
+	}
 }
 
 .salad-title {
 	font-size: 35px;
 	color: $light-red;
+	@include breakpoint($small) {
+		font-size: 25px;
+	}
 }
 
 
@@ -378,6 +440,12 @@ figure {
 		width: 100%;
 		display: block;
 		@include transition(top 0.2s linear);
+	}
+	@include breakpoint($small) {
+		height: auto !important;
+		img {
+			top: 0 !important;
+		}
 	}
 }
 
@@ -399,6 +467,11 @@ figure.zoom {
 	// background-color: $color-hero-background;
 	h1 {
 		color: $light-red;
+	}
+	@include breakpoint($small) {
+		h1 {
+			font-size: 3em;
+		}
 	}
 }
 
@@ -433,6 +506,9 @@ figure.zoom {
 .salad-intro {
 	font-size: 18px;
 	color: #49B5AF;
+	@include breakpoint($small) {
+		font-size: 15px;
+	}
 }
 
 .content-share {
@@ -869,9 +945,9 @@ footer {
 	// width: 50%;
 	// float: left;
 	ul {
-		font-size: 12px;
-		padding-top: 0;
-		margin-top: 0;
+		// font-size: 12px;
+		// padding-top: 0;
+		// margin-top: 0;
 		list-style: none;
 		padding-left: 0;
 	}
@@ -880,13 +956,6 @@ footer {
 		padding: 5px 0;
 		&:last-child {
 			border-bottom: 0;
-		}
-	}
-	@include breakpoint($small) {
-		width: 100%;
-		padding: $unit;
-		ul {
-			padding: 0;
 		}
 	}
 }

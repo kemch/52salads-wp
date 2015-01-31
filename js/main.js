@@ -14,13 +14,16 @@ $(function(){
 $(function(){
 	var menu = $('.js-menu');
 	var nav = $('.js-nav');
+	var hamburger = menu.find('.fa');
 	menu.on('touchstart click', function(e){
 		if (nav.is(':visible')) {
-			nav.slideUp(200, function(){
+			hamburger.removeClass('fa-close').addClass('fa-bars');
+			nav.fadeOut(200, function(){
 				nav.attr('style','');
 			});
 		} else {
-			nav.slideDown(200);
+			nav.fadeIn(200);
+			hamburger.removeClass('fa-bars').addClass('fa-close');
 		}
 		e.preventDefault();
 	});

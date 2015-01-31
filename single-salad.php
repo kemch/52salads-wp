@@ -22,7 +22,9 @@
 						<div class="row">
 							<div class="col-md-4">
 								<h3>Ingredients</h3>
-								<? the_field('ingredients'); ?>
+								<div class="ingredients">
+									<? the_field('ingredients'); ?>
+								</div>
 							</div>
 							<div class="col-md-8">
 								<h3>Recipe</h3>

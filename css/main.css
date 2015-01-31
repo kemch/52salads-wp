@@ -425,6 +425,11 @@ section {
   width: 100%;
 }
 
+@media (min-width: 0px) and (max-width: 512px) {
+  [class^=col-] {
+    width: 100%;
+  }
+}
 .logo {
   margin-bottom: 0;
 }
@@ -437,6 +442,11 @@ header {
   header {
     display: none;
     padding: 15px 15px 0 15px;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    z-index: 10;
   }
 }
 
@@ -445,6 +455,12 @@ header {
 }
 .section-menu a {
   display: block;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  z-index: 11;
+  top: 0;
+  right: 10px;
   text-align: center;
   background-color: #322117;
   padding: 5px;
@@ -489,6 +505,15 @@ header {
     display: block;
     padding: 5px;
   }
+  .nav li a {
+    font-size: 20px;
+    font-weight: 200;
+  }
+  .nav a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 .nav-social-links {
@@ -502,7 +527,30 @@ header {
   *display: inline;
   padding: 0 5px;
 }
+@media (min-width: 0px) and (max-width: 512px) {
+  .nav-social-links {
+    width: 100%;
+  }
+  .nav-social-links a {
+    display: table-cell;
+    width: 1%;
+    vertical-align: middle;
+  }
+}
 
+@media (min-width: 0px) and (max-width: 512px) {
+  .nav li.nav-social-links {
+    display: table;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 40px;
+    margin-left: 0;
+  }
+  .nav li.nav-social-links a {
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
 .date {
   font-size: 0.875em;
   letter-spacing: 1px;
@@ -530,8 +578,11 @@ header {
   -o-background-size: 100% auto;
   -webkit-background-size: 100% auto;
   background-size: 100% auto;
+  background-color: #322117;
   background-repeat: no-repeat;
   background-position: top center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .section-hero-salad:before, .section-hero-salad:after {
   display: table;
@@ -560,10 +611,23 @@ header {
   font-weight: normal;
   font-size: 30px;
 }
+@media (min-width: 0px) and (max-width: 512px) {
+  .salad-panel {
+    padding: 15px 15px 20px 15px;
+  }
+  .salad-panel h3 {
+    font-size: 25px;
+  }
+}
 
 .salad-title {
   font-size: 35px;
   color: #f1644a;
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  .salad-title {
+    font-size: 25px;
+  }
 }
 
 figure {
@@ -585,6 +649,14 @@ figure img {
   -o-transition: top 0.2s linear;
   -webkit-transition: top 0.2s linear;
   transition: top 0.2s linear;
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  figure {
+    height: auto !important;
+  }
+  figure img {
+    top: 0 !important;
+  }
 }
 
 figure.zoom {
@@ -611,6 +683,11 @@ figure.zoom img {
 }
 .hero-content h1 {
   color: #f1644a;
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  .hero-content h1 {
+    font-size: 3em;
+  }
 }
 
 .search-container {
@@ -648,6 +725,11 @@ figure.zoom img {
 .salad-intro {
   font-size: 18px;
   color: #49B5AF;
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  .salad-intro {
+    font-size: 15px;
+  }
 }
 
 .content-share {
@@ -1093,9 +1175,6 @@ footer a {
 }
 
 .ingredients ul {
-  font-size: 12px;
-  padding-top: 0;
-  margin-top: 0;
   list-style: none;
   padding-left: 0;
 }
@@ -1105,15 +1184,6 @@ footer a {
 }
 .ingredients li:last-child {
   border-bottom: 0;
-}
-@media (min-width: 0px) and (max-width: 512px) {
-  .ingredients {
-    width: 100%;
-    padding: 25px;
-  }
-  .ingredients ul {
-    padding: 0;
-  }
 }
 
 .section-season {
