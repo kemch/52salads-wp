@@ -328,6 +328,103 @@ section {
   float: right;
 }
 
+.row {
+  margin-left: -35px;
+  margin-right: -35px;
+}
+.row:before, .row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.row:after {
+  clear: both;
+}
+
+.col-md-1 {
+  float: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 8.33333%;
+}
+
+.col-md-2 {
+  float: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 16.66667%;
+}
+
+.col-md-3 {
+  float: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 25%;
+}
+
+.col-md-4 {
+  float: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 33.33333%;
+}
+
+.col-md-5 {
+  float: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 41.66667%;
+}
+
+.col-md-6 {
+  float: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 50%;
+}
+
+.col-md-7 {
+  float: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 58.33333%;
+}
+
+.col-md-8 {
+  float: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 66.66667%;
+}
+
+.col-md-9 {
+  float: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 75%;
+}
+
+.col-md-10 {
+  float: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 83.33333%;
+}
+
+.col-md-11 {
+  float: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 91.66667%;
+}
+
+.col-md-12 {
+  float: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 100%;
+}
+
 .logo {
   margin-bottom: 0;
 }
@@ -428,6 +525,76 @@ header {
   clear: both;
 }
 
+.section-hero-salad {
+  -moz-background-size: 100% auto;
+  -o-background-size: 100% auto;
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.section-hero-salad:before, .section-hero-salad:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.section-hero-salad:after {
+  clear: both;
+}
+
+.salad-panel {
+  max-width: 870px;
+  margin: 50px auto;
+  padding: 25px 50px 50px 50px;
+  background: white;
+}
+.salad-panel .date {
+  text-align: left;
+  color: rgba(50, 33, 23, 0.5);
+  margin-bottom: 10px;
+}
+.salad-panel h3 {
+  color: #f1644a;
+  font-family: "cosmopolitan", script;
+  text-transform: none;
+  font-weight: normal;
+  font-size: 30px;
+}
+
+.salad-title {
+  font-size: 35px;
+  color: #f1644a;
+}
+
+figure {
+  margin: 0;
+  overflow: hidden;
+  height: 200px;
+  cursor: zoom-in;
+  -moz-transition: height 0.2s linear;
+  -o-transition: height 0.2s linear;
+  -webkit-transition: height 0.2s linear;
+  transition: height 0.2s linear;
+}
+figure img {
+  position: relative;
+  top: -200px;
+  width: 100%;
+  display: block;
+  -moz-transition: top 0.2s linear;
+  -o-transition: top 0.2s linear;
+  -webkit-transition: top 0.2s linear;
+  transition: top 0.2s linear;
+}
+
+figure.zoom {
+  cursor: zoom-out;
+  height: auto;
+}
+figure.zoom img {
+  top: 0%;
+}
+
 .hero-content {
   text-align: center;
   padding: 50px 25px 20px 25px;
@@ -478,6 +645,11 @@ header {
   padding-bottom: 20px;
 }
 
+.salad-intro {
+  font-size: 18px;
+  color: #49B5AF;
+}
+
 .content-share {
   max-width: 550px;
   margin: 0 auto;
@@ -494,6 +666,13 @@ header {
   *zoom: 1;
   *display: inline;
   margin: 10px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #afc735;
+  border: 0;
+  margin: 15px 0;
 }
 
 footer {
@@ -899,6 +1078,10 @@ footer a {
   }
 }
 
+.recipe {
+  font-size: 12px;
+}
+
 .salad-photo {
   width: 50%;
   float: left;
@@ -909,15 +1092,12 @@ footer a {
   }
 }
 
-.ingredients {
-  width: 50%;
-  float: left;
-}
 .ingredients ul {
   font-size: 12px;
   padding-top: 0;
   margin-top: 0;
   list-style: none;
+  padding-left: 0;
 }
 .ingredients li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);

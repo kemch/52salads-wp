@@ -63,6 +63,28 @@ function showVin(el, e) {
 	});
 }
 
+$('.js-figure').click(function(){
+	// var collapsed = $(this).height();
+	// if ($(this).attr('data-height') == collapsed) {
+	// 	$(this).attr('data-height',collapsed);
+	// } else {
+	// 	console.log('false');
+	// }
+	var height = $(this).find('img').height();
+
+	if ($(this).hasClass('zoom')) {
+		$(this).removeClass('zoom');
+		$(this).height('200px');
+		setTimeout(function(){
+		},400);
+	} else {
+		$(this).addClass('zoom').height(height);
+		setTimeout(function(){
+			$(this).height('auto');
+		},400);
+	}
+});
+
 
 $('.js-pinterest').click(function()   {ga('send', 'event', 'pinterest-nav', 'click',   'Social Links');});
 $('.js-twitter').click(function()   {ga('send', 'event', 'twitter-nav', 'click',   'Social Links');});

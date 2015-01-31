@@ -63,6 +63,8 @@ $unit: 25px;
 
 $circle-radius: 2em;
 
+$gutter: 35px;
+
 // =================================
 // =================================
 // == PLACEHOLDERS
@@ -205,6 +207,22 @@ section {
 	float: right;
 }
 
+.row {
+	@include clear;
+	margin-left: -1 * $gutter;
+	margin-right: -1 * $gutter;
+}
+
+@for $i from 1 through 12 {
+	.col-md-#{$i} {
+		float: left;
+		padding-left: $gutter;
+		padding-right: $gutter;
+		width: percentage($i/12);
+		// border: 1px solid black;
+	}
+}
+
 // =================================
 // =================================
 // == HEADER
@@ -316,6 +334,61 @@ header {
 	// }
 }
 
+.section-hero-salad {
+	@include background-size(100% auto);
+	background-repeat: no-repeat;
+	background-position: top center;
+	@include clear;
+}
+
+.salad-panel {
+	max-width: 870px;
+	margin: 50px auto;
+	padding: 25px 50px 50px 50px;
+	background: white;
+	.date {
+		text-align: left;
+		color: rgba($color-text,0.5);
+		margin-bottom: 10px;
+	}
+	h3 {
+		color: $light-red;
+		font-family: $cosmopolitan;
+		text-transform: none;
+		font-weight: normal;
+		font-size: 30px;
+	}
+}
+
+.salad-title {
+	font-size: 35px;
+	color: $light-red;
+}
+
+
+figure {
+	margin: 0;
+	overflow: hidden;
+	height: 200px;
+	cursor: zoom-in;
+	@include transition(height 0.2s linear);
+	img {
+		position: relative;
+		top: -200px;
+		width: 100%;
+		display: block;
+		@include transition(top 0.2s linear);
+	}
+}
+
+figure.zoom {
+	cursor: zoom-out;
+	height: auto;
+	img {
+		top: 0%;
+	}
+}
+
 .hero-content {
 	text-align: center;
 	padding: 50px $unit 20px $unit;
@@ -357,6 +430,11 @@ header {
 	padding-bottom: 20px;
 }
 
+.salad-intro {
+	font-size: 18px;
+	color: #49B5AF;
+}
+
 .content-share {
 	max-width: 550px;
 	margin: 0 auto;
@@ -369,6 +447,13 @@ header {
 		@include inline-block;
 		margin: 10px;
 	}
+}
+
+.divider {
+	height: 1px;
+	background-color: $green;
+	border: 0;
+	margin: 15px 0;
 }
 
 footer {
@@ -768,6 +853,10 @@ footer {
 	}
 }
 
+.recipe {
+	font-size: 12px;
+}
+
 .salad-photo {
 	width: 50%;
 	float: left;
@@ -777,13 +866,14 @@ footer {
 }
 
 .ingredients {
-	width: 50%;
-	float: left;
+	// width: 50%;
+	// float: left;
 	ul {
 		font-size: 12px;
 		padding-top: 0;
 		margin-top: 0;
 		list-style: none;
+		padding-left: 0;
 	}
 	li {
 		border-bottom: 1px solid rgba($black,0.25);
