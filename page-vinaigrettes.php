@@ -34,8 +34,8 @@
 					    while ($category_query->have_posts()) {
 					        $category_query->the_post();
 					        ?>
-					        	var post = '<? the_permalink(); ?>';
 					       	 <script>
+					        	var post = '<? the_permalink(); ?>';
 					       	 	console.log(post);
 					       	 </script>
 					        <?
