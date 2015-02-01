@@ -24,20 +24,20 @@
 						<? the_field('recipe'); ?>
 
 						<div class="used-in row">
-							<?
-			    			$args = array(
-								    'category_name' => $post->post_name
-								);
-								$category_query = new WP_Query($args);
-								$num_posts = $category_query->post_count;
-								if ($category_query->have_posts()) {
-								    while ($category_query->have_posts()) {
-								        $category_query->the_post();
-								        ?>
+		        	<div class="col-md-12">
+	        			<h3>Used in these salads </h3>
+		        		<ul class="salad-list">
+									<?
+					    			$args = array(
+										    'category_name' => $post->post_name
+										);
+										$category_query = new WP_Query($args);
+										$num_posts = $category_query->post_count;
+										if ($category_query->have_posts()) {
+										    while ($category_query->have_posts()) {
+										        $category_query->the_post();
+										        ?>
 
-								        	<div class="col-md-12">
-							        			<h3>Used in these salads </h3>
-								        		<ul class="salad-list">
 											       	<li class="salad">
 																<a class="salad-link-wrap" href="<?php the_permalink();?>">
 																	<span class="salad-list-number">
@@ -57,13 +57,13 @@
 																</a>
 															</div>
 									        	</li>
-								        	</ul>
-								        </div>
-								        <?
-								    }
-								}
-								wp_reset_postdata();
-			    		?>
+							        <?
+									    }
+										}
+										wp_reset_postdata();
+				    			?>
+			        	</ul>
+			        </div>
 						</div>
 					</div>
 				</div>
