@@ -26,12 +26,18 @@
 					$category_query = new WP_Query($args);
 					$num_posts = $category_query->post_count;
 					if ($category_query->have_posts()) {
+							?>
+							<div class="right">
+			        	<div class="post-count"><? echo $num_posts; ?></div>
+			       	</div>
+							<?
 					    while ($category_query->have_posts()) {
 					        $category_query->the_post();
 					        ?>
-					       	<div class="right">
-					        	<div class="post-count"><? echo $num_posts; ?></div>
-					       	</div>
+					        	var post = '<? the_permalink(); ?>';
+					       	 <script>
+					       	 	console.log(post);
+					       	 </script>
 					        <?
 					    }
 					} else {
