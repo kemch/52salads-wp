@@ -55,7 +55,7 @@
 																	</span>
 																	<img src="<? bloginfo('stylesheet_directory'); ?>/img/blank.png" alt="blank">
 																</a>
-															</div>
+
 									        	</li>
 							        <?
 									    }
