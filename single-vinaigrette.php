@@ -22,6 +22,49 @@
 					<div class="col-md-8">
 						<h3>Recipe</h3>
 						<? the_field('recipe'); ?>
+
+						<div class="used-in row">
+							<?
+			    			$args = array(
+								    'category_name' => $post->post_name
+								);
+								$category_query = new WP_Query($args);
+								$num_posts = $category_query->post_count;
+								if ($category_query->have_posts()) {
+								    while ($category_query->have_posts()) {
+								        $category_query->the_post();
+								        ?>
+
+								        	<div class="col-md-12">
+							        			<h3>Used in these salads </h3>
+								        		<ul class="salad-list">
+											       	<li class="salad">
+																<a class="salad-link-wrap" href="<?php the_permalink();?>">
+																	<span class="salad-list-number">
+																		<span><span><span class="circle">
+																			<span class="number"><small>#</small><? the_field('salad_number'); ?></span>
+																		</span></span></span>
+																	</span>
+																	<span class="salad-list-content">
+																		<span class="salad-list-date"><span><?php the_date('m/d/Y');?></span></span>
+																		<span class="salad-list-ingredients"><span><? the_title(); ?></span></span>
+																	</span>
+																	<? $image = get_field('content_image'); if( !empty($image) ): ?>
+																	<?php endif; ?>
+																	<span class="salad-list-thumbnail" style="background-image:url(<?php echo $image['url']; ?>);">
+																	</span>
+																	<img src="<? bloginfo('stylesheet_directory'); ?>/img/blank.png" alt="blank">
+																</a>
+															</div>
+									        	</li>
+								        	</ul>
+								        </div>
+								        <?
+								    }
+								}
+								wp_reset_postdata();
+			    		?>
+						</div>
 					</div>
 				</div>
 			</div>

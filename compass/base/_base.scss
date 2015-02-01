@@ -250,7 +250,7 @@ header {
 		height: 100%;
 		top: 0;
 		width: 100%;
-		z-index: 10;
+		z-index: 100;
 	}
 }
 
@@ -262,7 +262,7 @@ header {
 		width: 44px;
 		height: 44px;
 		position: absolute;
-		z-index: 11;
+		z-index: 101;
 		top: 0;
 		right: 10px;
 		text-align: center;
@@ -658,6 +658,18 @@ footer {
 	font-size: 12px;
 	p {
 		margin-top: 0;
+	}
+}
+
+.used-in {
+	.salad-list {
+		background-color: inherit;
+		li {
+			border: 0;
+		}
+	}
+	.salad {
+		width: 50%;
 	}
 }
 

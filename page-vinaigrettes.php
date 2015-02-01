@@ -10,8 +10,8 @@
 		</div>
 		<div class="page-list">
 
-			<? query_posts('category__in=4'); ?>
-			<? //query_posts('category__in=5'); ?>
+			<? //query_posts('category__in=4'); ?>
+			<? query_posts('category_name=vinaigrette'); ?>
 			<ul>
 				<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<li>
