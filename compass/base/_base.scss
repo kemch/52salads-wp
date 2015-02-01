@@ -552,6 +552,115 @@ footer {
 }
 
 
+
+
+// =================================
+// =================================
+// == GENERIC PAGE
+// =================================
+// =================================
+
+.page-wrap {
+	@include clear;
+	color: $color-hero-heading;
+	background: lighten($green,50) url(../img/pattern.png);
+	position: relative;
+	background-color: white;
+	background-repeat: repeat;
+	background-position: top center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.page-panel {
+	max-width: 870px;
+	margin: 50px auto;
+	padding: 25px 50px 50px 50px;
+	background: white;
+	.date {
+		text-align: left;
+		color: rgba($color-text,0.5);
+		margin-bottom: 10px;
+	}
+	h1 {
+		font-size: 35px;
+		color: $light-red;
+		@include breakpoint($small) {
+			font-size: 25px;
+		}
+	}
+	h2 {
+		color: $light-red;
+		font-family: $cosmopolitan;
+		text-transform: none;
+		font-weight: normal;
+		font-size: 30px;
+	}
+	h3 {
+		color: $light-red;
+		font-family: $cosmopolitan;
+		text-transform: none;
+		font-weight: normal;
+		font-size: 30px;
+	}
+	@include breakpoint($small) {
+		padding: 15px 15px 20px 15px;
+		h3 {
+			font-size: 25px;
+		}
+	}
+}
+
+.page-heading {
+
+}
+
+.page-intro {
+	font-size: 18px;
+	color: #49B5AF;
+	@include breakpoint($small) {
+		font-size: 15px;
+	}
+}
+
+.page-list {
+	max-width: 870px;
+	background-color: white;
+	margin: 0px auto 70px auto;
+	padding: 25px 50px 50px 50px;
+	ul {
+		list-style: none;
+	}
+	a {
+		text-decoration: none;
+	}
+	li {
+		border-bottom: 1px dotted $green;
+		width: 100%;
+		@include clear;
+	}
+	.left,
+	.right {
+		@include inline-block;
+	}
+	h2 {
+		margin-bottom: 0.125em;
+	}
+}
+
+.post-count {
+	float: right;
+	// margin: 0.5em 0;
+	line-height: 40px;
+}
+
+.small-intro {
+	font-size: 12px;
+	p {
+		margin-top: 0;
+	}
+}
+
 // =================================
 // =================================
 // == HOME VINAIGRETTE LIST (5)

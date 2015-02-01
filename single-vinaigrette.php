@@ -1,17 +1,38 @@
 <? get_header(); ?>
 <body>
 	<? get_template_part( 'nav' ); ?>
-	<section class="section-hero">
-		<div class="hero-content">
-			<h1>Vinaigrettes</h1>
-			<? $post = get_page_by_path('vinaigrettes'); ?>
-			<? echo $post->post_content; ?>
+	<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<section class="page-wrap">
+		<div class="page-panel">
+			<div class="page-heading">
+				<h1>Vinaigrettes</h1>
+			</div>
+			<div class="page-intro">
+				<? the_content(); ?>
+			</div>
+			<hr class="divider">
+			<div class="instructions">
+				<div class="row">
+					<div class="col-md-4">
+						<h3>Ingredients</h3>
+						<div class="ingredients">
+							<? the_field('ingredients'); ?>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<h3>Recipe</h3>
+						<? the_field('recipe'); ?>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
-	<section class="section-tips">
+
+
+
+	<section class="section-tips" style="display:none;">
 		<div class="tips-content">
 			<ul>
-			<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<li>
 				<h3><a href="<? the_permalink();?>"><? the_title();?></a></h3>
 				<section class="section-content">
@@ -19,10 +40,10 @@
 							<? the_field('recipe'); ?>
 				</section>
 			</li>
-			<? endwhile; ?>
-			<? endif; ?>
 			</ul>
 		</div>
 	</section>
+	<? endwhile; ?>
+	<? endif; ?>
 	<? get_footer(); ?>
 </body>

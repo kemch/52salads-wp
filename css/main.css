@@ -784,6 +784,126 @@ footer a {
   margin: 0 5px;
 }
 
+.page-wrap {
+  color: #322117;
+  background: #fefefc url(../img/pattern.png);
+  position: relative;
+  background-color: white;
+  background-repeat: repeat;
+  background-position: top center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.page-wrap:before, .page-wrap:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.page-wrap:after {
+  clear: both;
+}
+
+.page-panel {
+  max-width: 870px;
+  margin: 50px auto;
+  padding: 25px 50px 50px 50px;
+  background: white;
+}
+.page-panel .date {
+  text-align: left;
+  color: rgba(50, 33, 23, 0.5);
+  margin-bottom: 10px;
+}
+.page-panel h1 {
+  font-size: 35px;
+  color: #f1644a;
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  .page-panel h1 {
+    font-size: 25px;
+  }
+}
+.page-panel h2 {
+  color: #f1644a;
+  font-family: "cosmopolitan", script;
+  text-transform: none;
+  font-weight: normal;
+  font-size: 30px;
+}
+.page-panel h3 {
+  color: #f1644a;
+  font-family: "cosmopolitan", script;
+  text-transform: none;
+  font-weight: normal;
+  font-size: 30px;
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  .page-panel {
+    padding: 15px 15px 20px 15px;
+  }
+  .page-panel h3 {
+    font-size: 25px;
+  }
+}
+
+.page-intro {
+  font-size: 18px;
+  color: #49B5AF;
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  .page-intro {
+    font-size: 15px;
+  }
+}
+
+.page-list {
+  max-width: 870px;
+  background-color: white;
+  margin: 0px auto 70px auto;
+  padding: 25px 50px 50px 50px;
+}
+.page-list ul {
+  list-style: none;
+}
+.page-list a {
+  text-decoration: none;
+}
+.page-list li {
+  border-bottom: 1px dotted #afc735;
+  width: 100%;
+}
+.page-list li:before, .page-list li:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.page-list li:after {
+  clear: both;
+}
+.page-list .left,
+.page-list .right {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+.page-list h2 {
+  margin-bottom: 0.125em;
+}
+
+.post-count {
+  float: right;
+  line-height: 40px;
+}
+
+.small-intro {
+  font-size: 12px;
+}
+.small-intro p {
+  margin-top: 0;
+}
+
 .vin-list {
   margin: 0;
   padding: 0;
