@@ -5,7 +5,7 @@
 	<section class="page-wrap">
 		<div class="page-panel">
 			<div class="page-heading">
-				<h1>Vinaigrettes</h1>
+				<h1><? the_title(); ?></h1>
 			</div>
 			<div class="page-intro">
 				<? the_content(); ?>
