@@ -631,11 +631,25 @@ header {
   }
 }
 
+.pin-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 20;
+}
+.no-touch .pin-button {
+  display: none;
+}
+figure:hover .pin-button {
+  display: block;
+}
+
 figure {
   margin: 0;
   overflow: hidden;
   height: 200px;
   cursor: zoom-in;
+  position: relative;
   -moz-transition: height 0.2s linear;
   -o-transition: height 0.2s linear;
   -webkit-transition: height 0.2s linear;
@@ -666,6 +680,27 @@ figure.zoom {
 }
 figure.zoom img {
   top: 0%;
+}
+
+.share-button-group:before, .share-button-group:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.share-button-group:after {
+  clear: both;
+}
+
+.share-button {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin-right: 20px;
+}
+.share-button-tw {
+  margin-top: 3px;
 }
 
 .hero-content {

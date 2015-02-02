@@ -15,6 +15,9 @@
 						<? the_content(); ?>
 					</div>
 					<figure class="js-figure" style="height:200px;">
+						<div class="pin-button">
+							<a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red" data-pin-height="28"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png" /></a>
+						</div>
 						<img src="<?php echo $image_main['url']; ?>" alt="<? the_title(); ?>">
 					</figure>
 					<hr class="divider">
@@ -32,6 +35,9 @@
 							</div>
 						</div>
 					</div>
+
+					<? get_template_part( 'share' ); ?>
+
 				</div>
 			</section>
 	<? endwhile; endif; ?>

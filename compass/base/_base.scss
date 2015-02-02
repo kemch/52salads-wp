@@ -429,11 +429,25 @@ header {
 }
 
 
+.pin-button {
+	.no-touch & {
+		display: none;
+	}
+	figure:hover & {
+		display: block;
+	}
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	z-index: 20;
+}
+
 figure {
 	margin: 0;
 	overflow: hidden;
 	height: 200px;
 	cursor: zoom-in;
+	position: relative;
 	@include transition(height 0.2s linear);
 	img {
 		position: relative;
@@ -455,6 +469,18 @@ figure.zoom {
 	height: auto;
 	img {
 		top: 0%;
+	}
+}
+
+.share-button-group {
+	@include clear;
+}
+
+.share-button {
+	@include inline-block;
+	margin-right: 20px;
+	&-tw {
+		margin-top: 3px;
 	}
 }
 

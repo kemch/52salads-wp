@@ -13,8 +13,7 @@
 				<ul>
 				<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<li>
-					<h2><a><? the_title();?></a></h2>
-					<? the_content(); ?>
+					<h2><a href="<? the_permalink(); ?>"><? the_title();?></a></h2>
 				</li>
 				<? endwhile; ?>
 				<? endif; ?>
