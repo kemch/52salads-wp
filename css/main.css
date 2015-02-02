@@ -682,6 +682,14 @@ figure.zoom img {
   top: 0%;
 }
 
+.footer-logo .logo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
 .share-button-group:before, .share-button-group:after {
   display: table;
   content: "";

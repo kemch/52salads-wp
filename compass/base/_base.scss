@@ -472,6 +472,15 @@ figure.zoom {
 	}
 }
 
+.footer-logo {
+	.logo {
+		margin-left: auto;
+		margin-right: auto;
+		width: 75px;
+		@include opacity(0.3);
+	}
+}
+
 .share-button-group {
 	@include clear;
 }

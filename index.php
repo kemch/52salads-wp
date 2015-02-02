@@ -1,5 +1,6 @@
 <? get_header(); ?>
 <body>
+	<!-- <input type="text" name="" id="search"> -->
 	<? get_template_part( 'nav' ); ?>
 	<section class="section-hero">
 		<div class="hero-content">
@@ -61,7 +62,7 @@
 			<? query_posts('showposts=52&order=ASC&category_name=salad'); ?>
 			<? $num_posts = $wp_query->post_count; ?>
 			<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-				<li class="salad">
+				<li class="salad <?	echo strip_tags(get_the_tag_list('',' ','')); ?>">
 					<a class="salad-link-wrap" href="<?php the_permalink();?>">
 						<span class="salad-list-number">
 							<span><span><span class="circle">
