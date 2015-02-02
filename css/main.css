@@ -437,6 +437,7 @@ section {
 header {
   background-color: #322117;
   width: 100%;
+  padding: 10px;
 }
 @media (min-width: 0px) and (max-width: 512px) {
   header {
@@ -1004,6 +1005,14 @@ footer a {
 
 .post-vinaigrettes .content-ingredients {
   margin-top: 25px;
+}
+
+.home-title {
+  margin-bottom: 0;
+}
+
+.logo {
+  width: 100px;
 }
 
 .salad {

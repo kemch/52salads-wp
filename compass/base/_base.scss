@@ -243,6 +243,7 @@ header {
 	@extend %spacing;
 	background-color: $color-header-background;
 	width: 100%;
+	padding: 10px;
 	@include breakpoint($small) {
 		display: none;
 		padding: 15px 15px 0 15px;
@@ -768,6 +769,14 @@ footer {
 	.content-ingredients {
 		margin-top: $unit;
 	}
+}
+
+.home-title {
+	margin-bottom: 0;
+}
+
+.logo {
+	width: 100px;
 }
 
 // =================================

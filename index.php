@@ -7,11 +7,12 @@
 			  <i class="fa fa-circle fa-stack-2x"></i>
 			  <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
 			</span></small> 52 salads</h1> -->
-			<h1 class="logo"><img src="<? bloginfo('stylesheet_directory');?>/img/logo.svg" alt="52 salads"></h1>
+			<h1 class="home-title">52 salads</h1>
+			<!-- <h1 class="logo"><img src="<? bloginfo('stylesheet_directory');?>/img/logo.svg" alt="52 salads"></h1> -->
 			<h2>One salad per week for a year.
-			<a href="#" class="js-details" data-target=".content-intro"><i class="fa fa-info-circle"></i></a>
+			<!-- <a href="#" class="js-details" data-target=".content-intro"><i class="fa fa-info-circle"></i></a> -->
 			</h2>
-			<div class="content-intro" style="display:none;">
+			<div class="content-intro">
 				<? $post = get_page_by_path('info'); ?>
 				<? echo $post->post_content; ?>
 			</div>

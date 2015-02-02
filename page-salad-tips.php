@@ -1,24 +1,25 @@
 <? get_header(); ?>
 <body>
 	<? get_template_part( 'nav' ); ?>
-	<section class="section-hero">
+	<section class="page-wrap">
 		<div class="hero-content">
 			<h1>Salad Tips</h1>
-			<h2><? the_content(); ?></h2>
+			<div class="page-intro">
+				<? the_content(); ?>
+			</div>
 		</div>
-	</section>
-	<section class="section-tips">
-		<div class="tips-content">
+		<div class="page-list">
 			<? query_posts('category_name=tip'); ?>
-			<ul>
-			<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			<li>
-				<h3><a href="<? the_permalink();?>"><? the_title();?></a></h3>
-			</li>
-			<? endwhile; ?>
-			<? endif; ?>
-			<? wp_reset_query(); ?>
-			</ul>
+				<ul>
+				<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<li>
+					<h2><a><? the_title();?></a></h2>
+					<? the_content(); ?>
+				</li>
+				<? endwhile; ?>
+				<? endif; ?>
+				<? wp_reset_query(); ?>
+				</ul>
 		</div>
 	</section>
 	<? get_footer(); ?>
