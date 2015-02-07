@@ -828,6 +828,44 @@ footer a {
   margin: 0 5px;
 }
 
+.post-nav {
+  border-top: 1px solid #afc735;
+  padding-top: 25px;
+  margin-top: 25px;
+  font-size: 0.875em;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-align: center;
+}
+.post-nav:before, .post-nav:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.post-nav:after {
+  clear: both;
+}
+
+.next, .previous {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin: 0 10px;
+}
+.next a, .previous a {
+  text-decoration: none;
+}
+
+.next {
+  float: right;
+}
+
+.previous {
+  float: left;
+}
+
 .page-wrap {
   color: #322117;
   background: #fefefc url(../img/pattern.png);

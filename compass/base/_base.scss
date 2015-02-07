@@ -596,6 +596,32 @@ footer {
 // =================================
 // =================================
 
+
+.post-nav {
+	// float: right;
+	@include clear;
+	border-top: 1px solid $green;
+	padding-top: $unit;
+	margin-top: $unit;
+	font-size: 0.875em;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-align: center;
+}
+.next, .previous {
+	@include inline-block;
+	margin: 0 10px;
+	a {
+		text-decoration: none;
+	}
+}
+.next {
+	float: right;
+}
+.previous {
+	float: left;
+}
+
 .page-wrap {
 	@include clear;
 	color: $color-hero-heading;

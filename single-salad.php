@@ -38,6 +38,11 @@
 
 					<? get_template_part( 'share' ); ?>
 
+					<div class="post-nav">
+							<div class="previous"><?php next_post_link( '%link', '<i class="fa fa-arrow-left"></i> Last Week', TRUE); ?></div>
+							<div class="next"><?php previous_post_link( '%link', 'Next Week <i class="fa fa-arrow-right"></i>', TRUE); ?></div>
+						</div>
+
 				</div>
 			</section>
 	<? endwhile; endif; ?>
