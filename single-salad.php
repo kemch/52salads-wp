@@ -4,40 +4,42 @@
 	<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<? $image_bg = get_field('content_image');?>
 			<? $image_main = get_field('image'); ?>
-			<section vocab="http://schema.org/" typeof="Recipe" class="section-hero-salad" style="background-image:url('<?php echo $image_bg['url']; ?>');">
-				<div class="salad-panel">
-					<div class="salad-heading">
-						<div class="date">
-							<time property="datePublished" datetime="<? the_date('d-Y');?>">
-								<? the_date(); ?>
-							</time>
-						</div>
-						<h1 class="salad-title" property="name"><span class="salad-number"><small>#</small><? the_field("salad_number"); ?></span> <? the_title(); ?></h1>
-					</div>
-					<div property="description" class="salad-intro">
-						<? the_content(); ?>
-					</div>
-					<figure class="js-figure" style="height:200px;">
-						<div class="pin-button">
-							<a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red" data-pin-height="28"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png" /></a>
-						</div>
-						<div property="image" >
-							<img src="<?php echo $image_main['url']; ?>" alt="<? the_title(); ?>">
-						</div>
-					</figure>
-					<hr class="divider">
-					<div class="instructions">
-						<div class="row">
-							<div class="col-md-4">
-								<h3>Ingredients</h3>
-								<div property="ingredients" class="ingredients">
-									<? the_field('ingredients'); ?>
-								</div>
+			<section class="section-hero-salad" style="background-image:url('<?php echo $image_bg['url']; ?>');">
+				<div vocab="http://schema.org/" typeof="Recipe">
+					<div class="salad-panel">
+						<div class="salad-heading">
+							<div class="date">
+								<time property="datePublished" datetime="<? the_date('m-d-Y');?>">
+									<? the_date(); ?>
+								</time>
 							</div>
-							<div class="col-md-8">
-								<h3>Recipe</h3>
-								<div property="recipeInstructions">
-									<? the_field('recipe'); ?>
+							<h1 class="salad-title" property="name"><span class="salad-number"><small>#</small><? the_field("salad_number"); ?></span> <? the_title(); ?></h1>
+						</div>
+						<div property="description" class="salad-intro">
+							<? the_content(); ?>
+						</div>
+						<figure class="js-figure" style="height:200px;">
+							<div class="pin-button">
+								<a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red" data-pin-height="28"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png" /></a>
+							</div>
+							<div property="image" >
+								<img src="<?php echo $image_main['url']; ?>" alt="<? the_title(); ?>">
+							</div>
+						</figure>
+						<hr class="divider">
+						<div class="instructions">
+							<div class="row">
+								<div class="col-md-4">
+									<h3>Ingredients</h3>
+									<div property="ingredients" class="ingredients">
+										<? the_field('ingredients'); ?>
+									</div>
+								</div>
+								<div class="col-md-8">
+									<h3>Recipe</h3>
+									<div property="recipeInstructions">
+										<? the_field('recipe'); ?>
+									</div>
 								</div>
 							</div>
 						</div>
