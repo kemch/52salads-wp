@@ -5,8 +5,8 @@
 			<? $image_bg = get_field('content_image');?>
 			<? $image_main = get_field('image'); ?>
 			<section class="section-hero-salad" style="background-image:url('<?php echo $image_bg['url']; ?>');">
-				<div vocab="http://schema.org/" typeof="Recipe">
-					<div class="salad-panel">
+				<div class="salad-panel">
+					<div vocab="http://schema.org/" typeof="Recipe">
 						<div class="salad-heading">
 							<div class="date">
 								<time property="datePublished" datetime="<? the_date('m-d-Y');?>">
@@ -22,9 +22,7 @@
 							<div class="pin-button">
 								<a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red" data-pin-height="28"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png" /></a>
 							</div>
-
-								<img property="image" title="<? the_title(); ?>" id="img" src="<?php echo $image_main['url']; ?>" alt="<? the_title(); ?>" url="<?php echo $image_main['url']; ?>">
-
+							<img property="image" src="<?php echo $image_main['url']; ?>" alt="<? the_title(); ?>" url="<?php echo $image_main['url']; ?>">
 						</figure>
 						<hr class="divider">
 						<div class="instructions">
@@ -44,16 +42,12 @@
 							</div>
 						</div>
 					</div>
+					<? get_template_part( 'share' ); ?>
+					<div class="post-nav">
+						<div class="previous"><?php next_post_link( '%link', '<i class="fa fa-arrow-left"></i> Last Week', TRUE); ?></div>
+						<div class="next"><?php previous_post_link( '%link', 'Next Week <i class="fa fa-arrow-right"></i>', TRUE); ?></div>
+					</div>
 				</div>
-
-				<? get_template_part( 'share' ); ?>
-
-				<div class="post-nav">
-					<div class="previous"><?php next_post_link( '%link', '<i class="fa fa-arrow-left"></i> Last Week', TRUE); ?></div>
-					<div class="next"><?php previous_post_link( '%link', 'Next Week <i class="fa fa-arrow-right"></i>', TRUE); ?></div>
-				</div>
-
-
 			</section>
 	<? endwhile; endif; ?>
 	<? get_footer(); ?>
