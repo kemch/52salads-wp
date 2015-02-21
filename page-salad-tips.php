@@ -9,7 +9,7 @@
 			</div>
 		</div>
 		<div class="page-list">
-			<? query_posts('category_name=tip'); ?>
+			<? query_posts('category_name=tip&order=ASC&'); ?>
 				<ul>
 				<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<li>
