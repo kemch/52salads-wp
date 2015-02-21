@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<? bloginfo('template_directory'); ?>/css/main.css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<meta name="description" content="<? bloginfo('blog_description'); ?>">
+<meta name="description" content="<? bloginfo('description'); ?>">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <script src="<? bloginfo('template_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 <script src="//use.typekit.net/sek7qjp.js"></script>
