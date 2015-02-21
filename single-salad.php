@@ -22,9 +22,9 @@
 							<div class="pin-button">
 								<a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red" data-pin-height="28"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png" /></a>
 							</div>
-							<div property="image" >
-								<img src="<?php echo $image_main['url']; ?>" alt="<? the_title(); ?>">
-							</div>
+
+								<img property="image" title="<? the_title(); ?>" id="img" src="<?php echo $image_main['url']; ?>" alt="<? the_title(); ?>">
+
 						</figure>
 						<hr class="divider">
 						<div class="instructions">
