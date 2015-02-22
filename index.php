@@ -3,6 +3,9 @@
 	<!-- <input type="text" name="" id="search"> -->
 	<? get_template_part( 'nav' ); ?>
 	<section class="section-hero">
+		<!--[if lt IE 9]>
+		<p style="font-size:30px;">You are using an <strong>outdated</strong> browser.<br>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
 		<div class="hero-content">
 			<!-- <h1><small><span class="fa-stack">
 			  <i class="fa fa-circle fa-stack-2x"></i>
