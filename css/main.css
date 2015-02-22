@@ -973,6 +973,14 @@ footer a {
 .page-list h2 {
   margin-bottom: 0.125em;
 }
+@media (min-width: 0px) and (max-width: 512px) {
+  .page-list {
+    padding: 25px 10px 25px 10px;
+  }
+  .page-list ul {
+    padding-left: 0;
+  }
+}
 
 .post-count {
   float: right;

@@ -708,6 +708,12 @@ footer {
 	h2 {
 		margin-bottom: 0.125em;
 	}
+	@include breakpoint($small) {
+		padding: 25px 10px 25px 10px;
+		ul {
+			padding-left: 0;
+		}
+	}
 }
 
 .post-count {
