@@ -9,6 +9,7 @@
 			<a href="http://www.pinterest.com/52salads/" target="_blank" class="js-pinterest"><i class="fa fa-pinterest"></i></a>
 			<a href="http://www.twitter.com/52salads/" target="_blank" class="js-twitter"><i class="fa fa-twitter"></i></a>
 			<a href="http://www.facebook.com/make52salads/" target="_blank" class="js-facebook"><i class="fa fa-facebook"></i></a>
+			<a href="http://www.facebook.com/make52salads/" target="_blank" class="js-instagram"><i class="fa fa-instagram"></i></a>
 		</li>
 	</ul>
 </nav>

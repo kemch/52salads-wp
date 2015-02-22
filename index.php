@@ -101,6 +101,25 @@
 			<? else : ?>
 			<? endif; ?>
 			<? wp_reset_query(); ?>
+
+			<li class="pending-mobile">
+				<div class="salad-link-wrap">
+					<!-- <span class="salad-list-content">
+							<span class="salad-list-date"><i class="fa fa-clock-o"></i></span>
+					</span> -->
+					<div class="dontmiss">
+						Don't miss a salad
+					</div>
+					<ul class="nav">
+						<li class="nav-social-links">
+							<a href="http://www.pinterest.com/52salads/" target="_blank" class="js-pinterest"><i class="fa fa-pinterest"></i></a>
+							<a href="http://www.twitter.com/52salads/" target="_blank" class="js-twitter"><i class="fa fa-twitter"></i></a>
+							<a href="http://www.facebook.com/make52salads/" target="_blank" class="js-facebook"><i class="fa fa-facebook"></i></a>
+							<a href="http://www.instagram.com/make52salads/" target="_blank" class="js-instagram"><i class="fa fa-instagram"></i></a>
+						</li>
+					</ul>
+				</div>
+			</li>
 		</ul>
 	</section>
 	<? get_footer(); ?>

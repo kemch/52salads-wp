@@ -322,6 +322,9 @@ header {
 			padding-top: 10px;
 			padding-bottom: 10px;
 		}
+		a.js-details {
+			display: none;
+		}
 	}
 }
 
@@ -855,9 +858,32 @@ footer {
 .salad {
 	background-color: $black;
 }
-
 .pending {
 	background-color: $black;
+	@include breakpoint($small) {
+		display: none;
+	}
+}
+.pending-mobile {
+	background-color: $black;
+	.salad-list & {
+		width: 100%;
+		li {
+			width: 100%;
+		}
+	}
+	.nav {
+		padding-left: 0;
+		li.nav-social-links {
+			padding-top: 0;
+			margin-left: 0;
+			padding-bottom: 40px;
+			border: 0;
+			a {
+				color: white;
+			}
+		}
+	}
 }
 .salad-list {
 	@include clear;
@@ -979,6 +1005,14 @@ footer {
 			// font-size: 1.25em;
 		}
 	}
+}
+
+.dontmiss {
+	text-align: center;
+	font-size: 35px;
+	font-family: cosmopolitan;
+	color: rgb(241, 100, 74);
+	padding: 20px;
 }
 
 .salad-list-content {
