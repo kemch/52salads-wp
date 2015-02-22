@@ -1002,6 +1002,11 @@ footer {
 	.touch & span {
 		padding: 5px;
 		background-color: $brown;
+		@include inline-block;
+		background-color: rgba($brown,0.8);
+	}
+	@include breakpoint($small) {
+		padding: 5px;
 	}
 }
 
@@ -1012,7 +1017,11 @@ footer {
 	font-weight: 100;
 	.touch & span {
 		padding: 5px;
-		background-color: $brown;
+		@include inline-block;
+		background-color: rgba($brown,0.8);
+	}
+	@include breakpoint($small) {
+		padding: 5px;
 	}
 }
 

@@ -1259,6 +1259,17 @@ footer a {
 .touch .salad-list-date span {
   padding: 5px;
   background-color: #322117;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  background-color: rgba(50, 33, 23, 0.8);
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  .salad-list-date {
+    padding: 5px;
+  }
 }
 
 .salad-list-ingredients {
@@ -1267,7 +1278,17 @@ footer a {
 }
 .touch .salad-list-ingredients span {
   padding: 5px;
-  background-color: #322117;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  background-color: rgba(50, 33, 23, 0.8);
+}
+@media (min-width: 0px) and (max-width: 512px) {
+  .salad-list-ingredients {
+    padding: 5px;
+  }
 }
 
 .salad-list-thumbnail {
